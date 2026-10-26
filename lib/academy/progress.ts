@@ -1,9 +1,11 @@
-import type { Progress, Attempt } from './types';
+import type { Progress, Attempt, LearningPreferences, StudioProgress } from './types';
+export const defaultLearning:LearningPreferences={mode:'guided',editorSize:14,autoPreview:true,lineNumbers:true,focus:false,weeklyGoal:4,track:'mixed'};
+export const emptyStudio=():StudioProgress=>({completed:[],drafts:{},notes:{},activity:{}});
 export const KEY = 'firstlight:progress:v1';
-export const initialProgress = ():Progress => ({version:1,curriculum:'2026.1',profile:{name:'',experience:'brand-new',goal:'personal',minutes:10,timezone:Intl.DateTimeFormat().resolvedOptions().timeZone||'UTC',theme:'light',reducedMotion:false,fontSize:16,onboarded:false},completed:[],attempts:[],daily:{},reviews:[],drafts:{},project:{},milestones:[],updated:new Date().toISOString()});
+export const initialProgress = ():Progress => ({version:1,curriculum:'2026.1',profile:{name:'',experience:'brand-new',goal:'personal',minutes:10,timezone:Intl.DateTimeFormat().resolvedOptions().timeZone||'UTC',theme:'light',reducedMotion:false,fontSize:16,onboarded:false,learning:{...defaultLearning}},studio:emptyStudio(),completed:[],attempts:[],daily:{},reviews:[],drafts:{},project:{},milestones:[],updated:new Date().toISOString()});
 export function dayKey(date:Date,timezone:string){return new Intl.DateTimeFormat('en-CA',{timeZone:timezone,year:'numeric',month:'2-digit',day:'2-digit'}).format(date);}
 export function canOpen(id:number,p:Progress){return id===1||p.completed.includes(id)||p.completed.includes(id-1);}
-export function xp(p:Progress){return new Set(p.completed).size*30;}
+export function xp(p:Progress){return new Set(p.completed).size*30+new Set(p.studio?.completed??[]).size*20;}
 export function complete(p:Progress,id:number,now=new Date()):Progress{
   if(p.completed.includes(id)||!canOpen(id,p)) return p;
   const day=dayKey(now,p.profile.timezone);
@@ -15,7 +17,7 @@ export function recordAttempt(p:Progress,lesson:number,exercise:string,correct:b
 }
 export function finishReview(p:Progress,id:number,now=new Date()):Progress{const reviewed=recordAttempt(p,id,"კოდი",true);const day=dayKey(now,p.profile.timezone);return {...reviewed,daily:{...reviewed.daily,[day]:[...new Set([...(reviewed.daily[day]??[]),id])]}};}
 export function streak(p:Progress,now=new Date()){
- const days=Object.keys(p.daily).filter(k=>p.daily[k].length).sort().reverse();if(!days.length)return 0;
+ const days=[...new Set([...Object.keys(p.daily).filter(k=>p.daily[k].length),...Object.keys(p.studio?.activity??{}).filter(k=>p.studio?.activity[k]?.length)])].sort().reverse();if(!days.length)return 0;
  const today=dayKey(now,p.profile.timezone); const prior=(s:string)=>{const d=new Date(s+'T12:00:00Z');d.setUTCDate(d.getUTCDate()-1);return d.toISOString().slice(0,10)};
  let cursor=days.includes(today)?today:prior(today),count=0;while(days.includes(cursor)){count++;cursor=prior(cursor)}return count;
 }
@@ -33,11 +35,32 @@ export function parseProgress(text:string):Progress{
  if(p.attempts.length>2000||!p.attempts.every(a=>Number.isInteger(a.lesson)&&a.lesson>=1&&a.lesson<=48&&['quiz','order',"კოდი"].includes(a.exercise)&&typeof a.correct==='boolean'&&Number.isFinite(Date.parse(a.at))))throw new Error("სავარჯიშოს მცდელობების მონაცემები არასწორია.");
  if(!p.reviews.every(r=>Number.isInteger(r.lesson)&&r.lesson>=1&&r.lesson<=48&&Number.isInteger(r.successes)&&r.successes>=0&&Number.isFinite(Date.parse(r.due))))throw new Error("გამეორების განრიგი არასწორია.");
  if(!p.milestones.every(x=>['structure','styles','responsive','interactive','ready'].includes(x)))throw new Error("უცნობი ეტაპია მითითებული.");
- return p;
+ const pref=pr.learning;
+ if(pref!==undefined&&(!proto(pref)||!['guided','challenge'].includes(pref.mode)||![14,16,18].includes(pref.editorSize)||!['mixed','foundations','projects'].includes(pref.track)||![2,4,6].includes(pref.weeklyGoal)||!['autoPreview','lineNumbers','focus'].every(k=>typeof pref[k as keyof typeof pref]==='boolean')))throw new Error('სასწავლო პარამეტრები არასწორია.');
+ const studio=p.studio;
+ const validKey=(key:string)=>/^(solis|bloom|forma|atlas|tempo|orbit):[1-6]$/.test(key);
+ if(studio!==undefined){
+  if(!proto(studio)||!Array.isArray(studio.completed)||studio.completed.length>36||!studio.completed.every(validKey)||new Set(studio.completed).size!==studio.completed.length||!proto(studio.drafts)||!proto(studio.notes)||!proto(studio.activity))throw new Error('პროექტების პროგრესი არასწორია.');
+  for(const [key,v]of Object.entries(studio.drafts))if(!validKey(key)||!proto(v)||!['html','css','js'].every(t=>typeof v[t as keyof typeof v]==='string'&&v[t as keyof typeof v].length<250000))throw new Error('პროექტის მონახაზი არასწორია.');
+  for(const [key,v]of Object.entries(studio.notes))if(!validKey(key)||typeof v!=='string'||v.length>10000)throw new Error('პროექტის ჩანაწერი არასწორია.');
+  for(const [day,v]of Object.entries(studio.activity))if(!/^\d{4}-\d{2}-\d{2}$/.test(day)||!Array.isArray(v)||!v.every(validKey))throw new Error('პროექტების აქტივობა არასწორია.');
+ }
+ return {...p,profile:{...pr,learning:{...defaultLearning,...pref}},studio:studio??emptyStudio()};
 }
 export function mergeProgress(local:Progress,cloud:Progress):Progress{
  const completed=[...new Set([...local.completed,...cloud.completed])].sort((a,b)=>a-b);const daily={...cloud.daily};for(const [k,v]of Object.entries(local.daily))daily[k]=[...new Set([...(daily[k]??[]),...v])];
- return {...local,completed,daily,reviews:[...new Map([...cloud.reviews,...local.reviews].map(r=>[r.lesson,r])).values()],attempts:[...cloud.attempts,...local.attempts].slice(-2000),project:{...cloud.project,...local.project},drafts:{...cloud.drafts,...local.drafts},milestones:[...new Set([...cloud.milestones,...local.milestones])],updated:new Date().toISOString()};
+ const studioLocal=local.studio??emptyStudio(),studioCloud=cloud.studio??emptyStudio();
+ const activity={...studioCloud.activity};for(const [day,keys]of Object.entries(studioLocal.activity))activity[day]=[...new Set([...(activity[day]??[]),...keys])];
+ const studio={completed:[...new Set([...studioCloud.completed,...studioLocal.completed])],drafts:{...studioCloud.drafts,...studioLocal.drafts},notes:{...studioCloud.notes,...studioLocal.notes},activity};
+ return {...local,studio,completed,daily,reviews:[...new Map([...cloud.reviews,...local.reviews].map(r=>[r.lesson,r])).values()],attempts:[...cloud.attempts,...local.attempts].slice(-2000),project:{...cloud.project,...local.project},drafts:{...cloud.drafts,...local.drafts},milestones:[...new Set([...cloud.milestones,...local.milestones])],updated:new Date().toISOString()};
 }
 export function loadProgress():Progress{const raw=localStorage.getItem(KEY);if(!raw)return initialProgress();return parseProgress(raw);}
 export function saveProgress(p:Progress){localStorage.setItem(KEY,JSON.stringify(p));}
+
+export function finishStudio(p:Progress,key:string,now=new Date()):Progress {
+ if(!/^(solis|bloom|forma|atlas|tempo|orbit):[1-6]$/.test(key))return p;
+ const studio=p.studio??emptyStudio();if(studio.completed.includes(key))return p;
+ const [project,number]=key.split(':');if(+number>1&&!studio.completed.includes(`${project}:${+number-1}`))return p;
+ const day=dayKey(now,p.profile.timezone);
+ return {...p,studio:{...studio,completed:[...studio.completed,key],activity:{...studio.activity,[day]:[...new Set([...(studio.activity[day]??[]),key])]}},updated:now.toISOString()};
+}
