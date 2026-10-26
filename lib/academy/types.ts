@@ -1,0 +1,7 @@
+export type CodeFiles = { html: string; css: string; js: string };
+export type Check = { label: string; selector?: string; count?: number; attribute?: string; contains?: string; property?: string; values?: string[]; expression?: string; width?: number; action?: { selector: string; event: 'click' | 'input' | 'submit'; value?: string }; manual?: boolean };
+export type Lesson = { id: number; module: number; title: string; objective: string; explanation: string; example: string; annotation: string; task: string; language: keyof CodeFiles; starter: CodeFiles; solution: CodeFiles; checks: Check[]; hints: [string,string]; quiz: { question: string; choices: string[]; correct: number; explanations: string[]; type?: 'predict' | 'choice' | 'fill' }; order: { prompt: string; lines: string[] }; recap: string; connection: string; minutes: number };
+export type Attempt = { lesson: number; exercise: string; correct: boolean; at: string };
+export type Review = { lesson: number; due: string; successes: number };
+export type Profile = { name: string; experience: string; goal: string; minutes: number; timezone: string; theme: 'light'|'dark'|'system'; reducedMotion: boolean; fontSize: number; onboarded: boolean };
+export type Progress = { version: 1; curriculum: '2026.1'; profile: Profile; completed: number[]; attempts: Attempt[]; daily: Record<string,number[]>; reviews: Review[]; drafts: Record<string,CodeFiles>; project: Record<string,string>; milestones: string[]; updated: string };
