@@ -1,11 +1,12 @@
 import type { CodeFiles } from './types';
-import { photos } from './photos';
-import { download, zipBytes } from './zip';
+import { photos } from './photos.ts';
+import { download, zipBytes } from './zip.ts';
+export const localAssetPaths=(text:string)=>text.replace(/(["'`])\/photos\//g,'$1photos/').replace(/(url\(\s*)\/photos\//g,'$1photos/');
 export async function exportCodeProject(name:string,files:CodeFiles,title:string){
  const matches=[...new Set(Object.values(files).join('\n').match(/\/photos\/[a-z-]+\.jpg/g)??[])];
  const assets:Record<string,string|Uint8Array>={};
  for(const path of matches){const response=await fetch(path);if(!response.ok)throw new Error('ფოტო ვერ ჩაიტვირთა: '+path);assets[path.slice(1)]=new Uint8Array(await response.arrayBuffer());}
- const local=(text:string)=>text.replaceAll('/photos/','photos/');
+ const local=localAssetPaths;
  const safeTitle=title.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
  const html=`<!doctype html>\n<html lang="ka"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${safeTitle}</title><link rel="stylesheet" href="styles.css"></head><body>\n${local(files.html)}\n<script src="main.js"></script></body></html>`;
  const credits=photos.filter(photo=>matches.includes(photo.path)).map(photo=>`${photo.credit} — ${photo.source}\n${photo.license}: ${photo.licenseUrl}`).join('\n\n');
