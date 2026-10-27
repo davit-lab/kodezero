@@ -38,9 +38,9 @@ export function parseProgress(text:string):Progress{
  const pref=pr.learning;
  if(pref!==undefined&&(!proto(pref)||!['guided','challenge'].includes(pref.mode)||![14,16,18].includes(pref.editorSize)||!['mixed','foundations','projects'].includes(pref.track)||![2,4,6].includes(pref.weeklyGoal)||!['autoPreview','lineNumbers','focus'].every(k=>typeof pref[k as keyof typeof pref]==='boolean')))throw new Error('სასწავლო პარამეტრები არასწორია.');
  const studio=p.studio;
- const validKey=(key:string)=>/^(solis|bloom|forma|atlas|tempo|orbit):(?:[1-6]|v2:(?:[1-9]|1[0-8]))$/.test(key);
+ const validKey=(key:string)=>/^(?:(solis|bloom|forma|atlas|tempo|orbit):(?:[1-6]|v2:(?:[1-9]|1[0-8]))|(branon|health):v3:(?:[1-9]|1[0-9]|2[0-5]))$/.test(key);
  if(studio!==undefined){
-  if(!proto(studio)||!Array.isArray(studio.completed)||studio.completed.length>144||!studio.completed.every(validKey)||new Set(studio.completed).size!==studio.completed.length||!proto(studio.drafts)||!proto(studio.notes)||!proto(studio.activity))throw new Error('პროექტების პროგრესი არასწორია.');
+  if(!proto(studio)||!Array.isArray(studio.completed)||studio.completed.length>194||!studio.completed.every(validKey)||new Set(studio.completed).size!==studio.completed.length||!proto(studio.drafts)||!proto(studio.notes)||!proto(studio.activity))throw new Error('პროექტების პროგრესი არასწორია.');
   for(const [key,v]of Object.entries(studio.drafts))if(!validKey(key)||!proto(v)||!['html','css','js'].every(t=>typeof v[t as keyof typeof v]==='string'&&v[t as keyof typeof v].length<250000))throw new Error('პროექტის მონახაზი არასწორია.');
   for(const [key,v]of Object.entries(studio.notes))if(!validKey(key)||typeof v!=='string'||v.length>10000)throw new Error('პროექტის ჩანაწერი არასწორია.');
   for(const [day,v]of Object.entries(studio.activity))if(!/^\d{4}-\d{2}-\d{2}$/.test(day)||!Array.isArray(v)||!v.every(validKey))throw new Error('პროექტების აქტივობა არასწორია.');
@@ -58,9 +58,9 @@ export function loadProgress():Progress{const raw=localStorage.getItem(KEY);if(!
 export function saveProgress(p:Progress){localStorage.setItem(KEY,JSON.stringify(p));}
 
 export function finishStudio(p:Progress,key:string,now=new Date()):Progress {
- if(!/^(solis|bloom|forma|atlas|tempo|orbit):v2:(?:[1-9]|1[0-8])$/.test(key))return p;
+ if(!/^(branon|health):v3:(?:[1-9]|1[0-9]|2[0-5])$/.test(key))return p;
  const studio=p.studio??emptyStudio();if(studio.completed.includes(key))return p;
- const [project,,number]=key.split(':');if(+number>1&&!studio.completed.includes(`${project}:v2:${+number-1}`))return p;
+ const [project,,number]=key.split(':');if(+number>1&&!studio.completed.includes(`${project}:v3:${+number-1}`))return p;
  const day=dayKey(now,p.profile.timezone);
  return {...p,studio:{...studio,completed:[...studio.completed,key],activity:{...studio.activity,[day]:[...new Set([...(studio.activity[day]??[]),key])]}},updated:now.toISOString()};
 }

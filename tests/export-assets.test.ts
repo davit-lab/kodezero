@@ -7,3 +7,8 @@ test('ZIP rewrites local photos without corrupting source credits or external li
 const image='/photos/interior.jpg';`;
  const out=localAssetPaths(code);assert.match(out,/<img src="photos\/interior.jpg">/);assert.ok(out.includes('https://unsplash.com/photos/abc'));assert.ok(out.includes('url(photos/interior.jpg)'));assert.ok(out.includes("const image='photos/interior.jpg'"));
 });
+
+test('ZIP preserves uploaded course assets in HTML, CSS and JavaScript',()=>{
+ const code=`<img src="/course-assets/branon/logo.png">\nbody{background:url('/course-assets/branon/wood_bg.jpg')}\nconst photo="/course-assets/health/slider1.jpg";`;
+ const out=localAssetPaths(code);assert.ok(out.includes('src="course-assets/branon/logo.png"'));assert.ok(out.includes("url('course-assets/branon/wood_bg.jpg')"));assert.ok(out.includes('photo="course-assets/health/slider1.jpg"'));
+});
