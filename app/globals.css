@@ -60,3 +60,6 @@ html:lang(ka) .dashboard-hero h2{font-size:clamp(1.8rem,2.6vw,3rem);line-height:
 .focus-mode>.sidebar.open{display:flex;z-index:60}.focus-mode>.sidebar.open~.sidebar-scrim{display:block}
 .app-shell .editor-stack>pre,.app-shell .editor-stack>textarea{line-height:1.7!important}
 @media(max-width:767px){.app-shell .line-numbers{padding-top:17px}}
+.dashboard-hero-copy,.hero-project-display{min-width:0}
+@media(min-width:901px){.dashboard-hero{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}}
+.builder-canvas .code-editor{background:#20292a}
