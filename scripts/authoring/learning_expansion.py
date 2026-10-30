@@ -77,4 +77,4 @@ items=[]
 for i,line in enumerate(terms.splitlines()):
  name,topic,definition,example=line.split('|',3);items.append(dict(id='t'+str(i+1),name=name,topic=topic,definition=definition,example=example))
 assert len(items)==72,len(items)
-(R/'lib/academy/terms.ts').write_text('export type Term={id:string;name:string;topic:string;definition:string;example:string};\nexport const terms:Term[]='+json.dumps(items,ensure_ascii=False,indent=2)+';\n')
+(R/'lib/academy/terms.ts').write_text("import {extraTerms} from './extra-terms.ts';\n"+'export type Term={id:string;name:string;topic:string;definition:string;example:string};\nexport const terms:Term[]='+json.dumps(items,ensure_ascii=False,indent=2)[:-1]+',...extraTerms];\n')

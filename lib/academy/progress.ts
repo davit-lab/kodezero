@@ -1,3 +1,5 @@
+import {terms} from './terms.ts';
+const termIds=new Set(terms.map(term=>term.id));
 import type { Progress, Attempt, LearningPreferences, StudioProgress } from './types';
 export const defaultLearning:LearningPreferences={mode:'guided',editorSize:14,autoPreview:true,lineNumbers:true,focus:false,weeklyGoal:4,track:'mixed'};
 export const emptyStudio=():StudioProgress=>({completed:[],drafts:{},notes:{},activity:{}});
@@ -40,7 +42,7 @@ export function parseProgress(text:string):Progress{
  const guide=p.websiteGuide;const guideIds=['purpose','browser','pages','structure','navigation','layout','responsive','files','forms','interaction','quality','publish'];
  if(guide!==undefined&&(!proto(guide)||!Array.isArray(guide.completed)||guide.completed.length>12||new Set(guide.completed).size!==guide.completed.length||!guide.completed.every(id=>guideIds.includes(id))||!proto(guide.notes)||!Object.entries(guide.notes).every(([id,note])=>guideIds.includes(id)&&typeof note==='string'&&note.length<=5000)))throw new Error('საიტის გეგმის მონაცემები არასწორია.');
  const vocabulary=p.vocabulary;
- if(vocabulary!==undefined&&(!proto(vocabulary)||!['saved','known'].every(field=>{const entries=vocabulary[field as 'saved'|'known'];return Array.isArray(entries)&&entries.length<=72&&new Set(entries).size===entries.length&&entries.every(id=>typeof id==='string'&&/^t(?:[1-9]|[1-6][0-9]|7[0-2])$/.test(id));})))throw new Error('ტერმინების პროგრესი არასწორია.');
+ if(vocabulary!==undefined&&(!proto(vocabulary)||!['saved','known'].every(field=>{const entries=vocabulary[field as 'saved'|'known'];return Array.isArray(entries)&&entries.length<=termIds.size&&new Set(entries).size===entries.length&&entries.every(id=>typeof id==='string'&&termIds.has(id));})))throw new Error('ტერმინების პროგრესი არასწორია.');
  const studio=p.studio;
  const validKey=(key:string)=>/^(?:(solis|bloom|forma|atlas|tempo|orbit):(?:[1-6]|v2:(?:[1-9]|1[0-8]))|(branon|health):v3:(?:[1-9]|1[0-9]|2[0-5])|lab:v1:(?:[1-9]|1[0-8]))$/.test(key);
  if(studio!==undefined){

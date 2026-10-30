@@ -1,3 +1,4 @@
+import {extraTerms} from './extra-terms.ts';
 export type Term={id:string;name:string;topic:string;definition:string;example:string};
 export const terms:Term[]=[
   {
@@ -504,4 +505,5 @@ export const terms:Term[]=[
     "definition": "ფაილების ცვლილებების ისტორიის მართვა. ძველ ვერსიასთან შედარებასა და დაბრუნებას ამარტივებს.",
     "example": "git status"
   }
+,...extraTerms
 ];
