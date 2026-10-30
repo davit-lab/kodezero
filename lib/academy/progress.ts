@@ -37,10 +37,14 @@ export function parseProgress(text:string):Progress{
  if(!p.milestones.every(x=>['structure','styles','responsive','interactive','ready'].includes(x)))throw new Error("უცნობი ეტაპია მითითებული.");
  const pref=pr.learning;
  if(pref!==undefined&&(!proto(pref)||!['guided','challenge'].includes(pref.mode)||![14,16,18].includes(pref.editorSize)||!['mixed','foundations','projects'].includes(pref.track)||![2,4,6].includes(pref.weeklyGoal)||!['autoPreview','lineNumbers','focus'].every(k=>typeof pref[k as keyof typeof pref]==='boolean')))throw new Error('სასწავლო პარამეტრები არასწორია.');
+ const guide=p.websiteGuide;const guideIds=['purpose','browser','pages','structure','navigation','layout','responsive','files','forms','interaction','quality','publish'];
+ if(guide!==undefined&&(!proto(guide)||!Array.isArray(guide.completed)||guide.completed.length>12||new Set(guide.completed).size!==guide.completed.length||!guide.completed.every(id=>guideIds.includes(id))||!proto(guide.notes)||!Object.entries(guide.notes).every(([id,note])=>guideIds.includes(id)&&typeof note==='string'&&note.length<=5000)))throw new Error('საიტის გეგმის მონაცემები არასწორია.');
+ const vocabulary=p.vocabulary;
+ if(vocabulary!==undefined&&(!proto(vocabulary)||!['saved','known'].every(field=>{const entries=vocabulary[field as 'saved'|'known'];return Array.isArray(entries)&&entries.length<=72&&new Set(entries).size===entries.length&&entries.every(id=>typeof id==='string'&&/^t(?:[1-9]|[1-6][0-9]|7[0-2])$/.test(id));})))throw new Error('ტერმინების პროგრესი არასწორია.');
  const studio=p.studio;
- const validKey=(key:string)=>/^(?:(solis|bloom|forma|atlas|tempo|orbit):(?:[1-6]|v2:(?:[1-9]|1[0-8]))|(branon|health):v3:(?:[1-9]|1[0-9]|2[0-5]))$/.test(key);
+ const validKey=(key:string)=>/^(?:(solis|bloom|forma|atlas|tempo|orbit):(?:[1-6]|v2:(?:[1-9]|1[0-8]))|(branon|health):v3:(?:[1-9]|1[0-9]|2[0-5])|lab:v1:(?:[1-9]|1[0-8]))$/.test(key);
  if(studio!==undefined){
-  if(!proto(studio)||!Array.isArray(studio.completed)||studio.completed.length>194||!studio.completed.every(validKey)||new Set(studio.completed).size!==studio.completed.length||!proto(studio.drafts)||!proto(studio.notes)||!proto(studio.activity))throw new Error('პროექტების პროგრესი არასწორია.');
+  if(!proto(studio)||!Array.isArray(studio.completed)||studio.completed.length>212||!studio.completed.every(validKey)||new Set(studio.completed).size!==studio.completed.length||!proto(studio.drafts)||!proto(studio.notes)||!proto(studio.activity))throw new Error('პროექტების პროგრესი არასწორია.');
   for(const [key,v]of Object.entries(studio.drafts))if(!validKey(key)||!proto(v)||!['html','css','js'].every(t=>typeof v[t as keyof typeof v]==='string'&&v[t as keyof typeof v].length<250000))throw new Error('პროექტის მონახაზი არასწორია.');
   for(const [key,v]of Object.entries(studio.notes))if(!validKey(key)||typeof v!=='string'||v.length>10000)throw new Error('პროექტის ჩანაწერი არასწორია.');
   for(const [day,v]of Object.entries(studio.activity))if(!/^\d{4}-\d{2}-\d{2}$/.test(day)||!Array.isArray(v)||!v.every(validKey))throw new Error('პროექტების აქტივობა არასწორია.');
@@ -52,7 +56,7 @@ export function mergeProgress(local:Progress,cloud:Progress):Progress{
  const studioLocal=local.studio??emptyStudio(),studioCloud=cloud.studio??emptyStudio();
  const activity={...studioCloud.activity};for(const [day,keys]of Object.entries(studioLocal.activity))activity[day]=[...new Set([...(activity[day]??[]),...keys])];
  const studio={completed:[...new Set([...studioCloud.completed,...studioLocal.completed])],drafts:{...studioCloud.drafts,...studioLocal.drafts},notes:{...studioCloud.notes,...studioLocal.notes},activity};
- return {...local,studio,completed,daily,reviews:[...new Map([...cloud.reviews,...local.reviews].map(r=>[r.lesson,r])).values()],attempts:[...cloud.attempts,...local.attempts].slice(-2000),project:{...cloud.project,...local.project},drafts:{...cloud.drafts,...local.drafts},milestones:[...new Set([...cloud.milestones,...local.milestones])],updated:new Date().toISOString()};
+ return {...local,...(local.websiteGuide||cloud.websiteGuide?{websiteGuide:{completed:[...new Set([...(cloud.websiteGuide?.completed??[]),...(local.websiteGuide?.completed??[])])],notes:{...cloud.websiteGuide?.notes,...local.websiteGuide?.notes}}}:{}),...(local.vocabulary||cloud.vocabulary?{vocabulary:{saved:[...new Set([...(cloud.vocabulary?.saved??[]),...(local.vocabulary?.saved??[])])],known:[...new Set([...(cloud.vocabulary?.known??[]),...(local.vocabulary?.known??[])])]}}:{}),studio,completed,daily,reviews:[...new Map([...cloud.reviews,...local.reviews].map(r=>[r.lesson,r])).values()],attempts:[...cloud.attempts,...local.attempts].slice(-2000),project:{...cloud.project,...local.project},drafts:{...cloud.drafts,...local.drafts},milestones:[...new Set([...cloud.milestones,...local.milestones])],updated:new Date().toISOString()};
 }
 export function loadProgress():Progress{const raw=localStorage.getItem(KEY);if(!raw)return initialProgress();return parseProgress(raw);}
 export function saveProgress(p:Progress){localStorage.setItem(KEY,JSON.stringify(p));}
