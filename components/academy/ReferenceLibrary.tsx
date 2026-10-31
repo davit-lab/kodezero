@@ -10,7 +10,7 @@ import { highlight } from './Editor';
 import { exportCodeProject } from '../../lib/academy/export-project';
 const Workspace=lazy(()=>import('./Workspace'));
 const libraries:Record<ReferenceTopic,ReferenceEntry[]>={HTML:htmlEntries,CSS:cssEntries,JavaScript:jsEntries};
-const topicMeta:Record<ReferenceTopic,{ka:string;description:string}>{HTML:{ka:'გვერდის სტრუქტურა',description:'შინაარსი, ბმულები და ფორმები'},CSS:{ka:'გარეგნობა და განლაგება',description:'ფერები, სივრცე და მოქნილი განლაგება'},JavaScript:{ka:'ქცევა და ინტერაქცია',description:'მოვლენები, მონაცემები და ლოგიკა'}};
+const topicMeta:Record<ReferenceTopic,{ka:string;description:string}>={HTML:{ka:'გვერდის სტრუქტურა',description:'შინაარსი, ბმულები და ფორმები'},CSS:{ka:'გარეგნობა და განლაგება',description:'ფერები, სივრცე და მოქნილი განლაგება'},JavaScript:{ka:'ქცევა და ინტერაქცია',description:'მოვლენები, მონაცემები და ლოგიკა'}};
 export default function ReferenceLibrary(){
  const [topic,setTopic]=useState<ReferenceTopic>('HTML');const [query,setQuery]=useState('');const [category,setCategory]=useState('ყველა თემა');const [page,setPage]=useState(1);const [active,setActive]=useState<ReferenceEntry|null>(null);const [files,setFiles]=useState<CodeFiles|null>(null);const [copied,setCopied]=useState('');const [error,setError]=useState('');
  const shown=useMemo(()=>libraries[topic].filter(entry=>(category==='ყველა თემა'||entry.category===category)&&[entry.title,entry.category,entry.description,entry.code].join(' ').toLocaleLowerCase('ka').includes(query.toLocaleLowerCase('ka'))),[topic,category,query]);
