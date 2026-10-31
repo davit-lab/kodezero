@@ -1,3 +1,4 @@
+import {validLearner} from './learner.ts';
 import {terms} from './terms.ts';
 const termIds=new Set(terms.map(term=>term.id));
 import type { Progress, Attempt, LearningPreferences, StudioProgress } from './types';
@@ -27,7 +28,7 @@ export function parseProgress(text:string):Progress{
  if(text.length>3_000_000) throw new Error("ასლი მეტისმეტად დიდია. მაქსიმალური ზომაა 3 მბ.");
  let p:Progress;try{p=JSON.parse(text) as Progress;}catch{throw new Error('ასლი გამართული JSON ფაილი არ არის.');}const proto=(x:unknown)=>x&&typeof x==='object'&&!Array.isArray(x);
  if(!proto(p)||p.version!==1||p.curriculum!=='2026.1'||!proto(p.profile)||!Array.isArray(p.completed)||!p.completed.every(n=>Number.isInteger(n)&&n>=1&&n<=48)||new Set(p.completed).size!==p.completed.length)throw new Error("ეს Firstlight-ის მხარდაჭერილი პროგრესის ასლი არ არის.");
- const pr=p.profile;if(typeof pr.name!=='string'||pr.name.length>80||!['brand-new','some-html','some-code'].includes(pr.experience)||!['personal','career','curiosity'].includes(pr.goal)||![5,10,20].includes(pr.minutes)||!['light','dark','system'].includes(pr.theme)||typeof pr.reducedMotion!=='boolean'||typeof pr.onboarded!=='boolean'||![16,18,20].includes(pr.fontSize))throw new Error("პროფილის ზოგი პარამეტრი არასწორია.");
+ const pr=p.profile;if(pr.learner!==undefined&&!validLearner(pr.learner))throw new Error('მოსწავლის პროფილის ან ავატარის მონაცემები არასწორია.');if(typeof pr.name!=='string'||pr.name.length>80||!['brand-new','some-html','some-code'].includes(pr.experience)||!['personal','career','curiosity'].includes(pr.goal)||![5,10,20].includes(pr.minutes)||!['light','dark','system'].includes(pr.theme)||typeof pr.reducedMotion!=='boolean'||typeof pr.onboarded!=='boolean'||![16,18,20].includes(pr.fontSize))throw new Error("პროფილის ზოგი პარამეტრი არასწორია.");
  try{dayKey(new Date(),pr.timezone)}catch{throw new Error("ასლში დროის სარტყელი არასწორია.")}
  if(!proto(p.project)||!proto(p.drafts)||!proto(p.daily)||!Array.isArray(p.attempts)||!Array.isArray(p.reviews)||!Array.isArray(p.milestones)||typeof p.updated!=='string'||!Number.isFinite(Date.parse(p.updated)))throw new Error("შენახული სასწავლო მონაცემები არასრულია.");
  const allowed=['index.html','about.html','services.html','projects.html','contact.html','css/styles.css','js/main.js','assets/studio.svg','assets/project.svg','README.md'];
@@ -53,12 +54,12 @@ export function parseProgress(text:string):Progress{
  }
  return {...p,profile:{...pr,learning:{...defaultLearning,...pref}},studio:studio??emptyStudio()};
 }
-export function mergeProgress(local:Progress,cloud:Progress):Progress{
+export function mergeProgress(local:Progress,cloud:Progress,useCloudProfile=false):Progress{
  const completed=[...new Set([...local.completed,...cloud.completed])].sort((a,b)=>a-b);const daily={...cloud.daily};for(const [k,v]of Object.entries(local.daily))daily[k]=[...new Set([...(daily[k]??[]),...v])];
  const studioLocal=local.studio??emptyStudio(),studioCloud=cloud.studio??emptyStudio();
  const activity={...studioCloud.activity};for(const [day,keys]of Object.entries(studioLocal.activity))activity[day]=[...new Set([...(activity[day]??[]),...keys])];
  const studio={completed:[...new Set([...studioCloud.completed,...studioLocal.completed])],drafts:{...studioCloud.drafts,...studioLocal.drafts},notes:{...studioCloud.notes,...studioLocal.notes},activity};
- return {...local,...(local.websiteGuide||cloud.websiteGuide?{websiteGuide:{completed:[...new Set([...(cloud.websiteGuide?.completed??[]),...(local.websiteGuide?.completed??[])])],notes:{...cloud.websiteGuide?.notes,...local.websiteGuide?.notes}}}:{}),...(local.vocabulary||cloud.vocabulary?{vocabulary:{saved:[...new Set([...(cloud.vocabulary?.saved??[]),...(local.vocabulary?.saved??[])])],known:[...new Set([...(cloud.vocabulary?.known??[]),...(local.vocabulary?.known??[])])]}}:{}),studio,completed,daily,reviews:[...new Map([...cloud.reviews,...local.reviews].map(r=>[r.lesson,r])).values()],attempts:[...cloud.attempts,...local.attempts].slice(-2000),project:{...cloud.project,...local.project},drafts:{...cloud.drafts,...local.drafts},milestones:[...new Set([...cloud.milestones,...local.milestones])],updated:new Date().toISOString()};
+ return {...local,profile:useCloudProfile?cloud.profile:local.profile,...(local.websiteGuide||cloud.websiteGuide?{websiteGuide:{completed:[...new Set([...(cloud.websiteGuide?.completed??[]),...(local.websiteGuide?.completed??[])])],notes:{...cloud.websiteGuide?.notes,...local.websiteGuide?.notes}}}:{}),...(local.vocabulary||cloud.vocabulary?{vocabulary:{saved:[...new Set([...(cloud.vocabulary?.saved??[]),...(local.vocabulary?.saved??[])])],known:[...new Set([...(cloud.vocabulary?.known??[]),...(local.vocabulary?.known??[])])]}}:{}),studio,completed,daily,reviews:[...new Map([...cloud.reviews,...local.reviews].map(r=>[r.lesson,r])).values()],attempts:[...cloud.attempts,...local.attempts].slice(-2000),project:{...cloud.project,...local.project},drafts:{...cloud.drafts,...local.drafts},milestones:[...new Set([...cloud.milestones,...local.milestones])],updated:new Date().toISOString()};
 }
 export function loadProgress():Progress{const raw=localStorage.getItem(KEY);if(!raw)return initialProgress();return parseProgress(raw);}
 export function saveProgress(p:Progress){localStorage.setItem(KEY,JSON.stringify(p));}
