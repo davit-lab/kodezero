@@ -1,3 +1,4 @@
+import {validTheoryDrafts} from './theory-progress.ts';
 import {validLearner} from './learner.ts';
 import {terms} from './terms.ts';
 const termIds=new Set(terms.map(term=>term.id));
@@ -40,6 +41,7 @@ export function parseProgress(text:string):Progress{
  if(!p.milestones.every(x=>['structure','styles','responsive','interactive','ready'].includes(x)))throw new Error("უცნობი ეტაპია მითითებული.");
  const pref=pr.learning;
  if(pref!==undefined&&(!proto(pref)||!['guided','challenge'].includes(pref.mode)||![14,16,18].includes(pref.editorSize)||!['mixed','foundations','projects'].includes(pref.track)||![2,4,6].includes(pref.weeklyGoal)||!['autoPreview','lineNumbers','focus'].every(k=>typeof pref[k as keyof typeof pref]==='boolean')))throw new Error('სასწავლო პარამეტრები არასწორია.');
+ if(p.theoryDrafts!==undefined&&!validTheoryDrafts(p.theoryDrafts))throw new Error('თეორიის საცდელი კოდი არასწორია.');
  const guide=p.websiteGuide;const guideIds=['purpose','browser','pages','structure','navigation','layout','responsive','files','forms','interaction','quality','publish'];
  if(guide!==undefined&&(!proto(guide)||!Array.isArray(guide.completed)||guide.completed.length>12||new Set(guide.completed).size!==guide.completed.length||!guide.completed.every(id=>guideIds.includes(id))||!proto(guide.notes)||!Object.entries(guide.notes).every(([id,note])=>guideIds.includes(id)&&typeof note==='string'&&note.length<=5000)))throw new Error('საიტის გეგმის მონაცემები არასწორია.');
  const vocabulary=p.vocabulary;
@@ -59,7 +61,7 @@ export function mergeProgress(local:Progress,cloud:Progress,useCloudProfile=fals
  const studioLocal=local.studio??emptyStudio(),studioCloud=cloud.studio??emptyStudio();
  const activity={...studioCloud.activity};for(const [day,keys]of Object.entries(studioLocal.activity))activity[day]=[...new Set([...(activity[day]??[]),...keys])];
  const studio={completed:[...new Set([...studioCloud.completed,...studioLocal.completed])],drafts:{...studioCloud.drafts,...studioLocal.drafts},notes:{...studioCloud.notes,...studioLocal.notes},activity};
- return {...local,profile:useCloudProfile?cloud.profile:local.profile,...(local.websiteGuide||cloud.websiteGuide?{websiteGuide:{completed:[...new Set([...(cloud.websiteGuide?.completed??[]),...(local.websiteGuide?.completed??[])])],notes:{...cloud.websiteGuide?.notes,...local.websiteGuide?.notes}}}:{}),...(local.vocabulary||cloud.vocabulary?{vocabulary:{saved:[...new Set([...(cloud.vocabulary?.saved??[]),...(local.vocabulary?.saved??[])])],known:[...new Set([...(cloud.vocabulary?.known??[]),...(local.vocabulary?.known??[])])]}}:{}),studio,completed,daily,reviews:[...new Map([...cloud.reviews,...local.reviews].map(r=>[r.lesson,r])).values()],attempts:[...cloud.attempts,...local.attempts].slice(-2000),project:{...cloud.project,...local.project},drafts:{...cloud.drafts,...local.drafts},milestones:[...new Set([...cloud.milestones,...local.milestones])],updated:new Date().toISOString()};
+ return {...local,...(local.theoryDrafts||cloud.theoryDrafts?{theoryDrafts:{...cloud.theoryDrafts,...local.theoryDrafts}}:{}),profile:useCloudProfile?cloud.profile:local.profile,...(local.websiteGuide||cloud.websiteGuide?{websiteGuide:{completed:[...new Set([...(cloud.websiteGuide?.completed??[]),...(local.websiteGuide?.completed??[])])],notes:{...cloud.websiteGuide?.notes,...local.websiteGuide?.notes}}}:{}),...(local.vocabulary||cloud.vocabulary?{vocabulary:{saved:[...new Set([...(cloud.vocabulary?.saved??[]),...(local.vocabulary?.saved??[])])],known:[...new Set([...(cloud.vocabulary?.known??[]),...(local.vocabulary?.known??[])])]}}:{}),studio,completed,daily,reviews:[...new Map([...cloud.reviews,...local.reviews].map(r=>[r.lesson,r])).values()],attempts:[...cloud.attempts,...local.attempts].slice(-2000),project:{...cloud.project,...local.project},drafts:{...cloud.drafts,...local.drafts},milestones:[...new Set([...cloud.milestones,...local.milestones])],updated:new Date().toISOString()};
 }
 export function loadProgress():Progress{const raw=localStorage.getItem(KEY);if(!raw)return initialProgress();return parseProgress(raw);}
 export function saveProgress(p:Progress){localStorage.setItem(KEY,JSON.stringify(p));}
