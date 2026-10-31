@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {virtualAsset,executableScript,sameFiles,cssOnlyChange} from '../lib/academy/virtual-files.ts';
+test('local stylesheet and script aliases resolve without permitting external code',()=>{for(const name of ['style.css','styles.css','main.css','app.css'])assert.equal(virtualAsset('./assets/'+name+'?v=2'),'css');for(const name of ['main.js','script.js','app.js','index.js'])assert.equal(virtualAsset('/'+name),'js');for(const path of ['https://example.com/styles.css','//example.com/main.js','data:text/css,body{}','unknown.css'])assert.equal(virtualAsset(path),null);});
+test('data scripts are preserved and equivalent file objects do not reset a preview',()=>{assert.equal(executableScript('application/json'),false);assert.equal(executableScript(''),true);const a={html:'<p>Hello</p>',css:'p{color:red}',js:'let count=0;'};assert.equal(sameFiles(a,{...a}),true);assert.equal(cssOnlyChange(a,{...a,css:'p{color:blue}'}),true);assert.equal(cssOnlyChange(a,{...a,js:'let count=1;'}),false);});
