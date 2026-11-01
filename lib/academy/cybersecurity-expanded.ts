@@ -1,6 +1,6 @@
 import type {CyberLesson,CyberSimulation} from './cybersecurity';
 
-import type {CyberLesson,CyberSimulation,CyberSimulationStep} from './cybersecurity';
+
 
 type TopicRow=[string,string,string,string,string];
 type TrackTopics={track:string;items:TopicRow[]};
