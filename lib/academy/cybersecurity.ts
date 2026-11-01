@@ -40,7 +40,7 @@ export const cyberSimulations:CyberSimulation[]=[
 {id:'passwords',title:'პაროლის უსაფრთხო არჩევანი',kind:'ანგარიშის სიმულაცია',objective:'შეარჩიე უსაფრთხო ჩვევა გამოგონილ მაგალითში.',scenario:'რომელი მიდგომა ეხმარება რამდენიმე ანგარიშის დაცვას?',choices:['ერთი მოკლე პაროლი ყველა საიტზე','უნიკალური გრძელი პაროლი, პაროლის მმართველი და MFA','პაროლის საჯარო ჩანიშვნაში დაწერა'],correct:1,feedback:'სწორია — გამოიყენე უნიკალური საიდუმლო და დამატებითი ფაქტორი.',explanation:'არასოდეს შეიყვანო რეალური პაროლი სასწავლო სიმულაციაში.'}
 ];
 export const cyberGlossary=[
-{term:'ავტორიზაცია',definition:'მომხმარებლის ან პროგრამის үйлдлийн эрхийг шалгах үйл явц.'.replace('მომხმარებლის ან პროგრამის үйлдлийн эрхийг шалгах үйл явц.','მომხმარებლის ან პროგრამის მოქმედების უფლების შემოწმება.')},
+{term:'ავტორიზაცია',definition:'მომხმარებლის ან პროგრამის მოქმედების უფლების შემოწმება.'},
 {term:'ავთენტიფიკაცია',definition:'ვინაობის დადასტურება — მაგალითად პაროლით, passkey-ით ან MFA-ით.'},
 {term:'CIA',definition:'კონფიდენციალურობა, მთლიანობა და ხელმისაწვდომობა — ინფორმაციის უსაფრთხოების სამი მიზანი.'},
 {term:'DNS',definition:'დომენის სახელებს შესაბამის ქსელურ მისამართებთან აკავშირებს.'},
@@ -68,8 +68,8 @@ export const cyberCommandCatalog=[
 {name:'history',description:'აჩვენებს მხოლოდ მიმდინარე სასწავლო ტერმინალის ბრძანებებს.',example:'history'}
 ];
 const virtualFiles:Record<string,Record<string,string>>={
-'~/lab':{'scope.txt':'სამიზნე: მხოლოდ ვირტუალური სასწავლო საქაღალდე.\\nნებართვა: ამ სავარჯიშოს ფაილების კითხვა.\\nგარეთ გასვლა: დაუშვებელია.','route.txt':'ნაბიჯი 1: წაიკითხე scope.txt.\\nნაბიჯი 2: მოძებნე სასწავლო ნიშანი.\\nKZ{SCOPE_FIRST}'},
-'~/evidence':{'alerts.log':'08:14 უარყოფილი შესვლა — demo-user\\n08:15 ახალი მოწყობილობა — სასწავლო ჩანაწერი\\n08:16 ცვლილება — საჭიროებს გადამოწმებას'}
+'~/lab':{'scope.txt':'სამიზნე: მხოლოდ ვირტუალური სასწავლო საქაღალდე.\nნებართვა: ამ სავარჯიშოს ფაილების კითხვა.\nგარეთ გასვლა: დაუშვებელია.','route.txt':'ნაბიჯი 1: წაიკითხე scope.txt.\nნაბიჯი 2: მოძებნე სასწავლო ნიშანი.\nKZ{SCOPE_FIRST}'},
+'~/evidence':{'alerts.log':'08:14 უარყოფილი შესვლა — demo-user\n08:15 ახალი მოწყობილობა — სასწავლო ჩანაწერი\n08:16 ცვლილება — საჭიროებს გადამოწმებას'}
 };
 export type SafeTerminalResult={output:string;cwd:string;foundFlag:boolean;clear:boolean};
 export function runSafeCyberCommand(raw:string,cwd:string,history:string[]):SafeTerminalResult{
@@ -81,7 +81,7 @@ export function runSafeCyberCommand(raw:string,cwd:string,history:string[]):Safe
  if(name==='clear')return stay('',{clear:true});
  if(name==='pwd')return stay(cwd);
  if(name==='whoami')return stay('learner (ვირტუალური მომხმარებელი)');
- if(name==='history')return stay(history.slice(-20).map((item,index)=>(index+1)+'  '+item).join('\\n')||'ისტორია ცარიელია.');
+ if(name==='history')return stay(history.slice(-20).map((item,index)=>(index+1)+'  '+item).join('\n')||'ისტორია ცარიელია.');
  if(name==='ls')return stay(Object.keys(virtualFiles[cwd]??{}).join('  ')||'საქაღალდე ცარიელია.');
  if(name==='cd'){
   const target=parts[1]??'~';const next=target==='..'?'~/lab':target==='evidence'||target==='~/evidence'?'~/evidence':target==='lab'||target==='~/lab'||target==='~'?'~/lab':'';
@@ -91,25 +91,25 @@ export function runSafeCyberCommand(raw:string,cwd:string,history:string[]):Safe
   const file=parts.at(-1)??'';const text=virtualFiles[cwd]?.[file];
   if(!text)return stay('ფაილი ვერ მოიძებნა. გამოიყენე ls და სცადე მხოლოდ ლაბორატორიის სასწავლო ფაილები.');
   if(name==='cat')return stay(text);
-  if(name==='head'){const nIndex=parts.indexOf('-n');const n=nIndex>=0?Math.max(1,Math.min(10,Number(parts[nIndex+1])||1)):10;return stay(text.split('\\n').slice(0,n).join('\\n'));}
-  if(name==='wc')return stay(String(text.split('\\n').length)+' ხაზია.');
-  const term=(parts[1]??'').replace(/^['"]|['"]$/g,'');const lines=text.split('\\n').filter(line=>line.toLowerCase().includes(term.toLowerCase()));
-  return stay(lines.join('\\n')||'შესაბამისი ხაზი ვერ მოიძებნა.',{foundFlag:lines.some(line=>line.includes('KZ{'))});
+  if(name==='head'){const nIndex=parts.indexOf('-n');const n=nIndex>=0?Math.max(1,Math.min(10,Number(parts[nIndex+1])||1)):10;return stay(text.split('\n').slice(0,n).join('\n'));}
+  if(name==='wc')return stay(String(text.split('\n').length)+' ხაზია.');
+  const term=(parts[1]??'').replace(/^['"]|['"]$/g,'');const lines=text.split('\n').filter(line=>line.toLowerCase().includes(term.toLowerCase()));
+  return stay(lines.join('\n')||'შესაბამისი ხაზი ვერ მოიძებნა.',{foundFlag:lines.some(line=>line.includes('KZ{'))});
  }
  if(name==='find'){
   const wanted=parts.at(-1)?.replace(/^['"]|['"]$/g,'')??'';const nameValue=parts[parts.indexOf('-name')+1]?.replace(/^['"]|['"]$/g,'');const match=nameValue||wanted;
   const files=Object.keys(virtualFiles).flatMap(dir=>Object.keys(virtualFiles[dir]).map(file=>dir+'/'+file));
-  return stay(files.filter(path=>path.endsWith('/'+match)||path.includes(match)).map(path=>path.replace('~/lab/','./').replace('~/evidence/','./')).join('\\n')||'ფაილი ვერ მოიძებნა.');
+  return stay(files.filter(path=>path.endsWith('/'+match)||path.includes(match)).map(path=>path.replace('~/lab/','./').replace('~/evidence/','./')).join('\n')||'ფაილი ვერ მოიძებნა.');
  }
  return stay('ეს ბრძანება ამ უსაფრთხო ტერმინალში არ არის ხელმისაწვდომი. აკრიფე help.');
 }
 export function explainSafeCyberCommand(raw:string){
- const tokens=raw.trim().split(/\\s+/).filter(Boolean);
+ const tokens=raw.trim().split(/\s+/).filter(Boolean);
  if(!tokens.length)return 'ბრძანება აკრიფე და თითოეულ ნაწილს აგიხსნი.';
  if(/[;|&<>$\x60]/.test(raw))return 'ბრძანებების დამაკავშირებელი სიმბოლოები გამორთულია.';
  const command=cyberCommandCatalog.find(item=>item.name===tokens[0]);
  if(!command)return 'ეს ბრძანება აქ არ არის დაშვებული. გამოიყენე მხოლოდ სასწავლო კატალოგის ბრძანებები.';
- return tokens.map((token,index)=>index===0?command.name+': '+command.description:token.startsWith('-')?'პარამეტრი '+token+' — ბრძანების არჩევითი რეჟიმი.':index===tokens.length-1?'არგუმენტი '+token+' — ლაბორატორიის ნებადართული ფაილი ან საქაღალდე.':'არგუმენტი '+token+' — ბრძანებისთვის გადასაცემი მნიშვნელობა.').join('\\n');
+ return tokens.map((token,index)=>index===0?command.name+': '+command.description:token.startsWith('-')?'პარამეტრი '+token+' — ბრძანების არჩევითი რეჟიმი.':index===tokens.length-1?'არგუმენტი '+token+' — ლაბორატორიის ნებადართული ფაილი ან საქაღალდე.':'არგუმენტი '+token+' — ბრძანებისთვის გადასაცემი მნიშვნელობა.').join('\n');
 }
 export const cyberSources=[
 {label:'OWASP Top 10 (2025)',href:'https://owasp.org/Top10/2025/'},
