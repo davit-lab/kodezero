@@ -1,3 +1,5 @@
+import {advancedCyberSources,expandedCyberGlossary,expandedCyberLessons,expandedCyberSimulations} from './cybersecurity-expanded';
+
 export type CyberQuiz={question:string;choices:string[];correct:number;reason:string};
 export type CyberLesson={id:string;track:string;title:string;minutes:number;concept:string;analogy:string;example:string;practice:string;defense:string;quiz:CyberQuiz};
 export type CyberTrack={id:string;title:string;summary:string;icon:string;lessons:string[]};
@@ -11,7 +13,7 @@ export const cyberTracks:CyberTrack[]=[
 {id:'defense',title:'დაცვა და ინციდენტები',summary:'ჟურნალები, ნიშნები და მშვიდი რეაგირების გეგმა.',icon:'07',lessons:['read-logs','incident-response']},
 {id:'career',title:'შემოწმება და პროფესია',summary:'ფარგლები, მტკიცებულება, ანგარიში და პასუხისმგებლიანი გამჟღავნება.',icon:'08',lessons:['test-scope','responsible-report']}
 ];
-export const cyberLessons:CyberLesson[]=[
+const introductoryCyberLessons:CyberLesson[]=[
 {id:'permission',track:'foundations',title:'პირველი წესი — ნებართვა',minutes:5,concept:'კიბერუსაფრთხოება სისტემების, მონაცემებისა და ადამიანების დაცვას სწავლობს. უსაფრთხოების შემოწმება მხოლოდ იმ სისტემაზე შეიძლება, რომელზეც წერილობითი ნებართვა და მკაფიო ფარგლები გაქვს.',analogy:'სახლში შესამოწმებლად მფლობელის თანხმობა გჭირდება. ღია ფანჯარა მოწვევას არ ნიშნავს.',example:'სასწავლო ლაბორატორიის სამიზნე ნებადართულია მხოლოდ ამ დავალების ფარგლებში. სხვისი საიტის შემოწმება ნებართვის გარეშე დაუშვებელია.',practice:'სიმულაციებში სამიზნე წინასწარ არის განსაზღვრული. თუ ნებართვის ფარგლები გაურკვეველია, გაჩერდი და ჰკითხე პასუხისმგებელ პირს.',defense:'წინასწარ ჩაიწერე ნებართვა, სამიზნე მისამართები, დრო, დაშვებული მოქმედებები და შეჩერების საკონტაქტო პირი.',quiz:{question:'საიტი პასუხობს უცნაურ მოთხოვნას. ეს ავტომატურად გაძლევს შემოწმების ნებართვას?',choices:['კი, თუ საიტი საჯაროა','არა — საჭიროა მფლობელის ნებართვა და განსაზღვრული ფარგლები','კი, თუ მხოლოდ ერთხელ სცდი'],correct:1,reason:'საჯარო ხელმისაწვდომობა ნებართვას არ ნიშნავს.'}},
 {id:'cia',track:'foundations',title:'CIA — სამი დაცვის მიზანი',minutes:6,concept:'კონფიდენციალურობა ზღუდავს ინფორმაციაზე წვდომას. მთლიანობა გვიჩვენებს, რომ მონაცემი დაუდასტურებლად არ შეცვლილა. ხელმისაწვდომობა ნიშნავს, რომ უფლებამოსილ ადამიანს სერვისით სარგებლობა შეუძლია.',analogy:'სამედიცინო ჩანაწერი დამალული უნდა იყოს უცხოსგან, სწორი დარჩეს და ექიმისთვის საჭირო დროს ხელმისაწვდომი იყოს.',example:'გატეხილი პაროლი კონფიდენციალურობას აზიანებს; გადაკეთებული შეფასება — მთლიანობას; გათიშული კლინიკის სისტემა — ხელმისაწვდომობას.',practice:'გაიხსენე შენი პროექტი და თითოეული მიზნისთვის მოიფიქრე ერთი შესაძლო პრობლემა.',defense:'ერთდროულად დაგეგმე წვდომის კონტროლი, ცვლილებების ისტორია, სარეზერვო ასლი და აღდგენის სავარჯიშო.',quiz:{question:'სარეზერვო ასლი რომელი მიზნის აღდგენას ეხმარება ყველაზე მეტად?',choices:['ხელმისაწვდომობას','მხოლოდ კონფიდენციალურობას','მომხმარებლის სახელის შეცვლას'],correct:0,reason:'სარეზერვო ასლი სისტემის ან მონაცემის აღდგენას უწყობს ხელს.'}},
 {id:'request',track:'web',title:'მოთხოვნა და პასუხი',minutes:6,concept:'ბრაუზერი სერვერს მოთხოვნას უგზავნის. მოთხოვნაში შეიძლება იყოს მეთოდი, მისამართი, სათაურები და მონაცემი; პასუხში — სტატუსი, სათაურები და შიგთავსი.',analogy:'ბიბლიოთეკაში წიგნს ითხოვ: ბიბლიოთეკარი ამოწმებს მოთხოვნას და გიბრუნებს წიგნს ან გეუბნება, რომ ის არ აქვს.',example:'GET /courses აბრუნებს კურსების სიას. 404 ნიშნავს, რომ მოთხოვნილი რესურსი ვერ მოიძებნა. 500 სერვერის შეცდომების ჯგუფს აღნიშნავს.',practice:'პაკეტების სიმულაციაში დაალაგე მოთხოვნის მეთოდი, მისამართი და პასუხის სტატუსი.',defense:'შეამოწმე სერვერის პასუხები, შეზღუდე ზედმეტი მონაცემები და პირადი ინფორმაცია URL-ში არ ჩასვა.',quiz:{question:'რომელი ნაწილი გვიჩვენებს, იპოვა თუ არა სერვერმა გვერდი?',choices:['HTTP სტატუსის კოდი','CSS ფერის კოდი','ფაილის გაფართოება'],correct:0,reason:'სტატუსის კოდი პასუხის შედეგს აღწერს.'}},
@@ -29,8 +31,10 @@ export const cyberLessons:CyberLesson[]=[
 {id:'test-scope',track:'career',title:'შემოწმების ფარგლები და ანგარიში',minutes:7,concept:'პენეტრაციის ტესტი ნებართვიანი, წინასწარ შეთანხმებული შემოწმებაა. ანგარიში აღწერს პრობლემას, ზემოქმედებას, უსაფრთხო მტკიცებულებასა და გამოსწორების რეკომენდაციას.',analogy:'ტექნიკოსი ამოწმებს მხოლოდ ხელშეკრულებაში ჩამოთვლილ მოწყობილობებს და ბოლოს გასაგებ სარემონტო სიას აბარებს.',example:'დასკვნაში არ შეიტანო მომხმარებლის პაროლი ან ზედმეტი პერსონალური მონაცემი. გამოიყენე მინიმალური, დაფარული ან გამოგონილი მტკიცებულება.',practice:'ანგარიშის ბარათებში იპოვე რომელი ველები სჭირდება უსაფრთხო დასკვნას.',defense:'წინასწარ შეათანხმე ნებართვა, ფარგლები, დრო, შეჩერების პირობა, მონაცემის მოპყრობა და ანგარიშის მიმღები.',quiz:{question:'სასარგებლო უსაფრთხოების ანგარიშში რა უნდა იყოს?',choices:['მხოლოდ ეფექტური სათაური','პრობლემა, ზემოქმედება, მინიმალური მტკიცებულება და გამოსწორება','სხვა მომხმარებლების პირადი მონაცემები'],correct:1,reason:'ანგარიში გუნდს პრობლემის გამოსწორებაში ეხმარება.'}},
 {id:'responsible-report',track:'career',title:'პასუხისმგებლიანი გამჟღავნება',minutes:5,concept:'თუ დაუგეგმავად პრობლემას წააწყდი, შეწყვიტე შემოწმება, არ ჩამოტვირთო ან შეცვალო მონაცემი და მოძებნე ორგანიზაციის ოფიციალური უსაფრთხოების არხი. იმოქმედე გამოქვეყნებული პოლიტიკის ფარგლებში.',analogy:'უცხო კარის ღია საკეტის აღმოჩენა გაძლევს მიზეზს, რომ მფლობელს შეატყობინო და არა გასაღები გამოსცადო.',example:'Bug bounty პროგრამა განსაზღვრავს დასაშვებ სამიზნეს, მეთოდს, მონაცემის შეზღუდვასა და შეტყობინების არხს.',practice:'პასუხისმგებლიანი გამჟღავნების სიმულაციაში აირჩიე უსაფრთხო შეტყობინების გზა.',defense:'შეინახე მინიმალური ჩანაწერი, არ გაამჟღავნო მომხმარებლის მონაცემი და დაელოდე ოფიციალურ პასუხს.',quiz:{question:'პოლიტიკის ფარგლებს გარეთ მონაცემი დაინახე. რა არის უსაფრთხო ნაბიჯი?',choices:['შეწყვიტო მოქმედება, არ შეინახო მონაცემი და გამოიყენო ოფიციალური არხი','გააგრძელო სხვა ანგარიშებზე ცდა','მტკიცებულება საჯაროდ გამოაქვეყნო'],correct:0,reason:'დაუყოვნებლივ შეჩერდი და გამოიყენე ორგანიზაციის ოფიციალური პროცესი.'}}
 ];
-export type CyberSimulation={id:string;title:string;kind:string;objective:string;scenario:string;choices:string[];correct:number;feedback:string;explanation:string};
-export const cyberSimulations:CyberSimulation[]=[
+export const cyberLessons:CyberLesson[]=[...introductoryCyberLessons,...expandedCyberLessons];
+export type CyberSimulationStep={scene:string;choices:string[];correct:number;feedback:string;explanation:string};
+export type CyberSimulation={id:string;title:string;kind:string;objective:string;scenario:string;choices:string[];correct:number;feedback:string;explanation:string;steps?:CyberSimulationStep[];difficulty?:string};
+const introductoryCyberSimulations:CyberSimulation[]=[
 {id:'scope',title:'ნებართვის საზღვარი',kind:'ეთიკის სიმულაცია',objective:'აირჩიე ნებადართული სამიზნე.',scenario:'ლაბორატორიის ბრიფი ამბობს: „მხოლოდ მოცემული სავარჯიშო შეამოწმე.“ სად გააგრძელებ?',choices:['მოცემულ სასწავლო გვერდზე','სხვა მომხმარებლის რეალურ ანგარიშზე','შემთხვევით ნაპოვნ სერვერზე'],correct:0,feedback:'სწორია — დარჩი ბრიფით განსაზღვრულ სამიზნესა და მოქმედებაში.',explanation:'ნებართვა კონკრეტულ სამიზნეს, მოქმედებასა და დროს მოიცავს.'},
 {id:'phishing',title:'საეჭვო წერილის გარჩევა',kind:'შეტყობინების სიმულაცია',objective:'იპოვე სანდოობის საეჭვო ნიშნები.',scenario:'გამოგონილი წერილი: „ანგარიში 10 წუთში დაიბლოკება. გახსენი უცნობი ბმული და შეიყვანე პაროლი.“ რა ქნა?',choices:['არ დააჭირო ბმულს; გადაამოწმე ოფიციალური არხით და შეატყობინე','შეიყვანე პაროლი, რადგან ლოგო ნაცნობია','გადააგზავნე წერილი სხვას ბმულთან ერთად'],correct:0,feedback:'სწორია — გადაუდებელი ზეწოლა და პაროლის მოთხოვნა საეჭვო ნიშნებია.',explanation:'ბმული დამოუკიდებელი ოფიციალური მისამართით გადაამოწმე; არ შეიყვანო საიდუმლო წერილის ბმულიდან.'},
 {id:'packets',title:'გამოგონილი ქსელური პაკეტი',kind:'ტრაფიკის სიმულაცია',objective:'გაარჩიე შიგთავსი და მეტამონაცემი.',scenario:'სასწავლო ჩანაწერში ჩანს: GET /login?token=DEMO_ONLY HTTP/1.1. რა პრობლემას ხედავ?',choices:['დემო ტოკენი URL-შია და შეიძლება ისტორიასა თუ ჟურნალში მოხვდეს','ყველა HTTPS საიტი ავტომატურად გატეხილია','GET მოთხოვნას მისამართი არ აქვს'],correct:0,feedback:'იპოვე — საიდუმლო URL-შია მოთავსებული.',explanation:'ეს გამოგონილი ჩანაწერია. საიდუმლო query string-ში არ უნდა ჩასვა.'},
@@ -39,7 +43,8 @@ export const cyberSimulations:CyberSimulation[]=[
 {id:'logs',title:'ჟურნალის მოკლე გამოძიება',kind:'დაცვითი სიმულაცია',objective:'ამოიცანი საეჭვო მიმდევრობა.',scenario:'გამოგონილი ლოგი აჩვენებს სამ უარყოფილ შესვლას, უცნობ მოწყობილობას და ადმინისტრატორის როლის ცვლილებას. რა არის უსაფრთხო პირველი ნაბიჯი?',choices:['შეინარჩუნე ლოგი და აცნობე პასუხისმგებელ გუნდს','წაშალე ჟურნალი','უცნობ მისამართს შეუტიე'],correct:0,feedback:'სწორია — მტკიცებულება შეინახე და ინციდენტის გეგმას მიჰყევი.',explanation:'სიმულაცია მხოლოდ გამოგონილ ლოგებს იყენებს.'},
 {id:'passwords',title:'პაროლის უსაფრთხო არჩევანი',kind:'ანგარიშის სიმულაცია',objective:'შეარჩიე უსაფრთხო ჩვევა გამოგონილ მაგალითში.',scenario:'რომელი მიდგომა ეხმარება რამდენიმე ანგარიშის დაცვას?',choices:['ერთი მოკლე პაროლი ყველა საიტზე','უნიკალური გრძელი პაროლი, პაროლის მმართველი და MFA','პაროლის საჯარო ჩანიშვნაში დაწერა'],correct:1,feedback:'სწორია — გამოიყენე უნიკალური საიდუმლო და დამატებითი ფაქტორი.',explanation:'არასოდეს შეიყვანო რეალური პაროლი სასწავლო სიმულაციაში.'}
 ];
-export const cyberGlossary=[
+export const cyberSimulations:CyberSimulation[]=[...introductoryCyberSimulations,...expandedCyberSimulations];
+const introductoryCyberGlossary=[
 {term:'ავტორიზაცია',definition:'მომხმარებლის ან პროგრამის მოქმედების უფლების შემოწმება.'},
 {term:'ავთენტიფიკაცია',definition:'ვინაობის დადასტურება — მაგალითად პაროლით, passkey-ით ან MFA-ით.'},
 {term:'CIA',definition:'კონფიდენციალურობა, მთლიანობა და ხელმისაწვდომობა — ინფორმაციის უსაფრთხოების სამი მიზანი.'},
@@ -53,6 +58,8 @@ export const cyberGlossary=[
 {term:'ჟურნალი',definition:'დროში დალაგებული ჩანაწერი სისტემის მოქმედებებისა და პასუხების შესახებ.'},
 {term:'პაკეტი',definition:'ქსელში გადასაცემად შეფუთული მონაცემის ერთეული.'}
 ];
+export const cyberGlossary=[...introductoryCyberGlossary,...expandedCyberGlossary];
+cyberTracks.forEach(track=>{track.lessons=cyberLessons.filter(lesson=>lesson.track===track.id).map(lesson=>lesson.id);});
 export const cyberLessonIds=cyberLessons.map(item=>item.id);
 export const cyberSimulationIds=cyberSimulations.map(item=>item.id);
 export const cyberCommandCatalog=[
@@ -65,7 +72,12 @@ export const cyberCommandCatalog=[
 {name:'head',description:'აჩვენებს ფაილის პირველ ხაზებს.',example:'head -n 2 route.txt'},
 {name:'wc',description:'დათვლის ხაზებს სასწავლო ფაილში.',example:'wc -l route.txt'},
 {name:'whoami',description:'აჩვენებს ამ უსაფრთხო სიმულაციის მომხმარებელს.',example:'whoami'},
-{name:'history',description:'აჩვენებს მხოლოდ მიმდინარე სასწავლო ტერმინალის ბრძანებებს.',example:'history'}
+{name:'history',description:'აჩვენებს მხოლოდ მიმდინარე სასწავლო ტერმინალის ბრძანებებს.',example:'history'},
+{name:'tail',description:'აჩვენებს ვირტუალური ფაილის ბოლო ხაზებს.',example:'tail -n 2 alerts.log'},
+{name:'less',description:'კითხულობს სასწავლო ფაილს გვერდებად, რეალური ფაილის შეცვლის გარეშე.',example:'less scope.txt'},
+{name:'stat',description:'აჩვენებს მხოლოდ ვირტუალური ფაილის ზომასა და ხაზების რაოდენობას.',example:'stat alerts.log'},
+{name:'file',description:'აჩვენებს სასწავლო ფაილის წინასწარ განსაზღვრულ ტიპს.',example:'file route.txt'},
+{name:'tree',description:'აჩვენებს ვირტუალური ლაბორატორიის საქაღალდეებსა და ფაილებს.',example:'tree'}
 ];
 const virtualFiles:Record<string,Record<string,string>>={
 '~/lab':{'scope.txt':'სამიზნე: მხოლოდ ვირტუალური სასწავლო საქაღალდე.\nნებართვა: ამ სავარჯიშოს ფაილების კითხვა.\nგარეთ გასვლა: დაუშვებელია.','route.txt':'ნაბიჯი 1: წაიკითხე scope.txt.\nნაბიჯი 2: მოძებნე სასწავლო ნიშანი.\nKZ{SCOPE_FIRST}'},
@@ -77,21 +89,24 @@ export function runSafeCyberCommand(raw:string,cwd:string,history:string[]):Safe
  if(!command)return stay('');
  if(/[;|&<>$\x60]/.test(command))return stay('სიმულირებული ტერმინალი ერთ ბრძანებას იღებს; მილები, გადამისამართება და სკრიპტები გამორთულია.');
  const parts:string[]=command.match(/"[^"]*"|'[^']*'|\S+/g)??[];const name=parts[0]?.toLowerCase()??'';
- if(name==='help')return stay('ნებადართულია მხოლოდ სასწავლო ფაილების კითხვა: '+cyberCommandCatalog.map(x=>x.name).join(', ')+' და clear.');
+ if(name==='help')return stay('უსაფრთხო ლაბორატორიის ბრძანებები: '+cyberCommandCatalog.map(x=>x.name).join(', ')+' და clear. ყველა მოქმედება მხოლოდ წინასწარ ჩაწერილ ტექსტზე სრულდება.');
+ if(name==='man'){const item=cyberCommandCatalog.find(entry=>entry.name===parts[1]);return stay(item?item.name+': '+item.description+' მაგალითი: '+item.example:'გამოიყენე man <ბრძანება> ან help ბრძანებების სანახავად.');}
  if(name==='clear')return stay('',{clear:true});
  if(name==='pwd')return stay(cwd);
  if(name==='whoami')return stay('learner (ვირტუალური მომხმარებელი)');
  if(name==='history')return stay(history.slice(-20).map((item,index)=>(index+1)+'  '+item).join('\n')||'ისტორია ცარიელია.');
  if(name==='ls')return stay(Object.keys(virtualFiles[cwd]??{}).join('  ')||'საქაღალდე ცარიელია.');
+ if(name==='tree')return stay(Object.keys(virtualFiles).map(dir=>dir+'\n  '+Object.keys(virtualFiles[dir]).join('\n  ')).join('\n'));
+ if(name==='stat'||name==='file'){const file=parts.at(-1)??'';const text=virtualFiles[cwd]?.[file];if(!text)return stay('ფაილი ვერ მოიძებნა. გამოიყენე ls და აირჩიე სასწავლო ფაილი.');return stay(name==='stat'?`ფაილი: ${file}\nზომა: ${text.length} სიმბოლო\nხაზები: ${text.split('\n').length}\nტიპი: ვირტუალური ტექსტური ფაილი`:`${file}: ASCII ტექსტი (ვირტუალური სასწავლო ფაილი)`);}
  if(name==='cd'){
   const target=parts[1]??'~';const next=target==='..'?'~/lab':target==='evidence'||target==='~/evidence'?'~/evidence':target==='lab'||target==='~/lab'||target==='~'?'~/lab':'';
   return next?stay('',{cwd:next}):stay('ამ ვირტუალურ გარემოში მხოლოდ ~/lab და ~/evidence საქაღალდეებია.');
  }
- if(name==='cat'||name==='head'||name==='wc'||name==='grep'){
+ if(name==='cat'||name==='less'||name==='head'||name==='tail'||name==='wc'||name==='grep'){
   const file=parts.at(-1)??'';const text=virtualFiles[cwd]?.[file];
   if(!text)return stay('ფაილი ვერ მოიძებნა. გამოიყენე ls და სცადე მხოლოდ ლაბორატორიის სასწავლო ფაილები.');
-  if(name==='cat')return stay(text);
-  if(name==='head'){const nIndex=parts.indexOf('-n');const n=nIndex>=0?Math.max(1,Math.min(10,Number(parts[nIndex+1])||1)):10;return stay(text.split('\n').slice(0,n).join('\n'));}
+  if(name==='cat'||name==='less')return stay(text);
+  if(name==='head'||name==='tail'){const nIndex=parts.indexOf('-n');const n=nIndex>=0?Math.max(1,Math.min(10,Number(parts[nIndex+1])||1)):10;const lines=text.split('\n');return stay((name==='head'?lines.slice(0,n):lines.slice(-n)).join('\n'));}
   if(name==='wc')return stay(String(text.split('\n').length)+' ხაზია.');
   const term=(parts[1]??'').replace(/^['"]|['"]$/g,'');const lines=text.split('\n').filter(line=>line.toLowerCase().includes(term.toLowerCase()));
   return stay(lines.join('\n')||'შესაბამისი ხაზი ვერ მოიძებნა.',{foundFlag:lines.some(line=>line.includes('KZ{'))});
@@ -111,9 +126,10 @@ export function explainSafeCyberCommand(raw:string){
  if(!command)return 'ეს ბრძანება აქ არ არის დაშვებული. გამოიყენე მხოლოდ სასწავლო კატალოგის ბრძანებები.';
  return tokens.map((token,index)=>index===0?command.name+': '+command.description:token.startsWith('-')?'პარამეტრი '+token+' — ბრძანების არჩევითი რეჟიმი.':index===tokens.length-1?'არგუმენტი '+token+' — ლაბორატორიის ნებადართული ფაილი ან საქაღალდე.':'არგუმენტი '+token+' — ბრძანებისთვის გადასაცემი მნიშვნელობა.').join('\n');
 }
-export const cyberSources=[
+const baseCyberSources=[
 {label:'OWASP Top 10 (2025)',href:'https://owasp.org/Top10/2025/'},
 {label:'MDN — innerHTML-ის უსაფრთხო გამოყენება',href:'https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML#security_considerations'},
 {label:'CISA — ფიშინგის ამოცნობა და შეტყობინება',href:'https://www.cisa.gov/secure-our-world/recognize-and-report-phishing'},
 {label:'NIST — პაროლის რჩევები',href:'https://www.nist.gov/cybersecurity-and-privacy/how-do-i-create-good-password'}
 ];
+export const cyberSources=[...baseCyberSources,...advancedCyberSources];
