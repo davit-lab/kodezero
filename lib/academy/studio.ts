@@ -1,11 +1,12 @@
 import type { CodeFiles, Check, Progress } from './types';
 import { importedProjectSpecs } from './imported-projects.ts';
+import { publicationProject } from './publication-project.ts';
 export type StudioStage = { id:number; title:string; concept:string; explanation:string; task:string; snippet:string; hints:string[]; checks:Check[]; review:string[]; starter:CodeFiles; solution:CodeFiles; transfer:boolean; resetStarter?:boolean; source?:{file:string;detail:string;original?:string} };
 export type StudioProject = { id:string; title:string; subtitle:string; kind:string; level:number; minutes:number; skills:string[]; lessons:number[]; accent:string; paper:string; ink:string; brief:string; audience:string; reuse:string; preview:CodeFiles; stages:StudioStage[]; cover?:string; sourceArchive?:string };
 type Patch={at:number;remove:number;insert:string};
 type StageSpec=Omit<StudioStage,'starter'|'solution'>&{starter?:CodeFiles;patches:Partial<Record<keyof CodeFiles,Patch>>};
 export type ProjectSpec=Omit<StudioProject,'stages'|'preview'>&{stages:StageSpec[]};
-export const studioProjects:StudioProject[]=importedProjectSpecs.map(project=>{
+export const studioProjects:StudioProject[]=[...importedProjectSpecs.map(project=>{
  let files:CodeFiles={html:'',css:'',js:''};
  const stages:StudioStage[]=project.stages.map(spec=>{
   if(spec.id===1)files={...spec.starter!};
@@ -15,7 +16,7 @@ export const studioProjects:StudioProject[]=importedProjectSpecs.map(project=>{
   return {...stage,starter,solution:{...solution}};
  });
  return {...project,stages,preview:stages[22].solution};
-});
+}),publicationProject];
 export const studioTotal=studioProjects.reduce((sum,project)=>sum+project.stages.length,0);
 export const stageKey=(project:string,stage:number)=>`${project}:v3:${stage}`;
 export function studioCanOpen(project:string,stage:number,p:Progress){const found=studioProjects.find(item=>item.id===project);return !!found&&Number.isInteger(stage)&&stage>=1&&stage<=found.stages.length&&(stage===1||!!p.studio?.completed.includes(stageKey(project,stage-1)));}
