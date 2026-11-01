@@ -76,7 +76,7 @@ export function runSafeCyberCommand(raw:string,cwd:string,history:string[]):Safe
  const command=raw.trim();const stay=(output:string,extra:Partial<SafeTerminalResult>={}):SafeTerminalResult=>({output,cwd,foundFlag:false,clear:false,...extra});
  if(!command)return stay('');
  if(/[;|&<>$\x60]/.test(command))return stay('სიმულირებული ტერმინალი ერთ ბრძანებას იღებს; მილები, გადამისამართება და სკრიპტები გამორთულია.');
- const parts=command.match(/"[^"]*"|'[^']*'|\S+/g)??[];const name=parts[0].toLowerCase();
+ const parts:string[]=command.match(/"[^"]*"|'[^']*'|\S+/g)??[];const name=parts[0]?.toLowerCase()??'';
  if(name==='help')return stay('ნებადართულია მხოლოდ სასწავლო ფაილების კითხვა: '+cyberCommandCatalog.map(x=>x.name).join(', ')+' და clear.');
  if(name==='clear')return stay('',{clear:true});
  if(name==='pwd')return stay(cwd);
