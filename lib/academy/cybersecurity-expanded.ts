@@ -130,7 +130,7 @@ const bad=['შემოწმება გამორთე და შეყ�
 export const expandedCyberLessons:CyberLesson[]=topicSets.flatMap(({track,items})=>items.map((r,i)=>{
  const correct=(i+items.length)%3, choices=[bad[0],bad[1]];
  choices.splice(correct,0,r[4]);
- return {id:r[0],track,title:r[1],concept:r[2],analogy:r[1]+' მარტივი წესების რუკას ჰგავს: ჯერ გაიგე საზღვარი, შემდეგ იმოქმედე.',example:r[3],practice:'გამოგონილ სავარჯიშოში იპოვე, სად ჩანს '+r[1].toLowerCase()+' და ახსენი შენი არჩევანი.',defense:r[4],minutes:6+(i%5),quiz:{question:r[1]+' თემაზე რომელი ნაბიჯია უსაფრთხო?',choices,correct,reason:r[4]};
+ return {id:r[0],track,title:r[1],concept:r[2],analogy:r[1]+' მარტივი წესების რუკას ჰგავს: ჯერ გაიგე საზღვარი, შემდეგ იმოქმედე.',example:r[3],practice:'გამოგონილ სავარჯიშოში იპოვე, სად ჩანს '+r[1].toLowerCase()+' და ახსენი შენი არჩევანი.',defense:r[4],minutes:6+(i%5),quiz:{question:r[1]+' თემაზე რომელი ნაბიჯია უსაფრთხო?',choices,correct,reason:r[4]}};
 }));
 
 
