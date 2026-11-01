@@ -22,7 +22,7 @@ export default function CyberLab(){
  else if(parts[0]==='cat'&&parts.length===2&&parts[1]===mission.filename){output=mission.file;setInspected(true);}
  else if(parts[0]==='grep'&&parts.length===3&&parts[2]===mission.filename){output=mission.file.split('\n').filter(line=>line.toLowerCase().includes((parts[1]??'').toLowerCase())).join('\n')||'შესაბამისი ჩანაწერი ვერ მოიძებნა.';}
  else output='ბრძანება ან ფაილი ვერ მოიძებნა. დახმარებისთვის აკრიფე help.';
- setLines(current=>[...current,{kind:'command',text:'student@lab:~$ '+value},{kind:'result',text:output}].slice(-30));setCommand('');};
+ setLines(current=>[...current,{kind:'command' as const,text:'student@lab:~$ '+value},{kind:'result' as const,text:output}].slice(-30));setCommand('');};
  const finish=()=>{if(answer===mission.correct&&inspected)setCompleted(current=>current.includes(mission.id)?current:[...current,mission.id]);};
  return <section className="lab-workspace">
  <div className="lab-header"><div><span className="learning-label">ინტერაქტიული სამუშაო სივრცე</span><h2>უსაფრთხოების ლაბორატორია</h2><p>წაიკითხე რეალისტური სასწავლო მონაცემები, იპოვე ნიშნები და მიიღე გადაწყვეტილება.</p></div><div className="lab-counter"><strong>{completed.length}/{missions.length}</strong><span>მისია დასრულდა</span></div></div>
