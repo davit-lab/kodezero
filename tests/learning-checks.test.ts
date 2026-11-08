@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {runInNewContext} from 'node:vm';
+import {skillLabs} from '../lib/academy/skill-labs.ts';
+import {skillTheory} from '../lib/academy/skill-theory.ts';
+import {brokenSkill} from '../lib/academy/skill-checks.ts';
+import {instrument,finalizeCheckResults} from '../lib/academy/runtime.ts';
+test('theory has a distinct explanation, transfer task and three escalating hints for every lesson',()=>{assert.equal(skillTheory.length,skillLabs.length);for(const theory of skillTheory){assert.equal(theory.hints.length,3);assert.equal(new Set(theory.hints).size,3);assert.ok(theory.why.length>100);assert.ok(theory.transfer.length>70);assert.ok(theory.pitfall.length>70);assert.ok(theory.correct>=0&&theory.correct<theory.choices.length);assert.ok(theory.reason.length>30);}});
+test('every audit mutation changes a real solution and every check expression parses',()=>{for(const lab of skillLabs){assert.notDeepEqual(brokenSkill(lab.id,lab.solution),lab.solution);for(const check of lab.checks)if(check.expression)assert.doesNotThrow(()=>instrument(check.expression!));}});
+test('execution errors invalidate passing automated conditions while preserving manual labels',()=>{const input=[{label:'HTML',pass:true},{label:'ხილვადობა',pass:true,manual:true}];const output=finalizeCheckResults(input,'სინტაქსური შეცდომა');assert.equal(output[0].pass,false);assert.equal(output[0].detail,'სინტაქსური შეცდომა');assert.equal(output[1].manual,true);assert.equal(input[0].pass,true);assert.equal(finalizeCheckResults(input)[0].pass,true);});
+test('sum lesson handles fresh, empty, negative and fractional prices',()=>{const source=skillLabs[13].solution.js.split('document.querySelector')[0];for(const [input,expected] of [[[],0],[[12,3],15],[[-4,2.5],-1.5]] as [number[],number][])assert.equal(runInNewContext(source+';total(values)',{values:input}),expected);});
+test('settings lesson checks schema types and both bounds',()=>{const source=skillLabs[17].solution.js;for(const value of [null,[],{},'text',{theme:'blue',fontSize:18},{theme:'light',fontSize:'18'},{theme:'light',fontSize:13},{theme:'dark',fontSize:25},{theme:'dark',fontSize:18.5}])assert.equal(runInNewContext(source+';validSettings(value)',{value}),false);for(const fontSize of [14,18,24])assert.equal(runInNewContext(source+';validSettings(value)',{value:{theme:'dark',fontSize}}),true);});

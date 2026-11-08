@@ -1,0 +1,506 @@
+Learning home ⇒ სასწავლო სივრცე
+Course path ⇒ კურსის გზა
+Practice ⇒ პრაქტიკა
+My website ⇒ ჩემი ვებსაიტი
+Field guide ⇒ ცნობარი
+A saved backup could not be read. Your original browser data is preserved. Export or repair it in Settings before saving new work. ⇒ შენახული ასლი ვერ წავიკითხეთ. ბრაუზერის თავდაპირველი მონაცემები შენარჩუნებულია. ახალი სამუშაოს შენახვამდე პარამეტრებში ჩამოტვირთე ან შეასწორე ასლი.
+Your browser could not save this change. Export a progress backup in Settings to protect your work. ⇒ ბრაუზერმა ცვლილება ვერ შეინახა. სამუშაოს დასაცავად პარამეტრებიდან პროგრესის ასლი ჩამოტვირთე.
+Opening your learning space… ⇒ შენი სასწავლო სივრცე იხსნება…
+Skip to content ⇒ მთავარ შინაარსზე გადასვლა
+YOUR NEXT CHAPTER ⇒ შენი შემდეგი თავი
+Web development ⇒ ვებდეველოპმენტი
+From curious to capable. ⇒ ინტერესიდან ცოდნამდე.
+Main navigation ⇒ მთავარი ნავიგაცია
+5 pages ⇒ 5 გვერდი
+Your course ⇒ შენი კურსი
+One useful skill at a time. ⇒ ერთი ახალი უნარი ყოველ ნაბიჯზე.
+Settings & progress ⇒ პარამეტრები და პროგრესი
+Your learning space ⇒ შენი სასწავლო სივრცე
+Learning as a guest ⇒ სწავლობ სტუმრის რეჟიმში
+Close navigation ⇒ ნავიგაციის დახურვა
+Open navigation ⇒ ნავიგაციის გახსნა
+Lesson workspace ⇒ გაკვეთილის სამუშაო სივრცე
+Your preferences ⇒ შენი პარამეტრები
+Welcome ⇒ კეთილი იყოს შენი მობრძანება
+ day streak ⇒ დღე ზედიზედ
+day streak ⇒ დღე ზედიზედ
+Toggle color theme ⇒ ფერების რეჟიმის შეცვლა
+Saving enabled. Use Settings to download a backup. ⇒ შენახვა ჩართულია. ასლის ჩამოტვირთვა პარამეტრებიდან შეგიძლია.
+Enable saving for this session ⇒ ამ სესიაში შენახვის ჩართვა
+Open settings ⇒ პარამეტრების გახსნა
+Loading checks… ⇒ შემოწმება იტვირთება…
+Firstlight · Made for the moment it clicks. ⇒ Firstlight · როცა ყველაფერი გასაგები ხდება.
+About this course ⇒ კურსის შესახებ
+Dismiss notification ⇒ შეტყობინების დახურვა
+A GOOD DAY TO LEARN SOMETHING ⇒ კარგი დღეა ახალი ცოდნისთვის
+Welcome back, ⇒ კეთილი დაბრუნება,
+A little progress, every day. ⇒ პატარა წინსვლა ყოველდღე.
+Your ideas are worth building. Let’s give you the tools. ⇒ შენი იდეები შექმნად ღირს. საჭირო ცოდნით დავიწყოთ.
+FROM YOUR FIRST TAG TO YOUR FIRST WEBSITE ⇒ პირველი ტეგიდან საკუთარ საიტამდე
+Small steps. ⇒ პატარა ნაბიჯები.
+Real websites. ⇒ ნამდვილი საიტები.
+Learn by doing, find your rhythm, and build something you can call your own. ⇒ ისწავლე კეთებით, იპოვე შენი ტემპი და შექმენი რაღაც საკუთარი.
+Keep learning ⇒ გააგრძელე სწავლა
+Write your first line ⇒ დაწერე პირველი ხაზი
+No experience needed. Just a little curiosity. ⇒ გამოცდილება არ გჭირდება. ინტერესიც საკმარისია.
+THE WEB IS YOUR CANVAS. ⇒ ვები შენი შემოქმედების სივრცეა.
+Hello, world. ⇒ გამარჯობა, სამყაროვ.
+&lt;p&gt;Made by you.&lt;/p&gt; ⇒ &lt;p&gt;შენ შექმენი.&lt;/p&gt;
+Made by you. ⇒ შენ შექმენი.
+IDEA → CODE → SOMETHING REAL ⇒ იდეა → კოდი → შედეგი
+Your next small step ⇒ შენი შემდეგი ნაბიჯი
+You built a strong foundation ⇒ საფუძველი უკვე მყარია
+View course path ⇒ კურსის გზის ნახვა
+Revisit what you have learned ⇒ გაიმეორე ნასწავლი
+Keep your skills fresh with mixed practice and your own projects. ⇒ გაიმყარე ცოდნა სხვადასხვა სავარჯიშოთი და საკუთარი პროექტებით.
+min lesson ⇒ წუთის გაკვეთილი
+3 hands-on exercises ⇒ 3 პრაქტიკული სავარჯიშო
+Start next lesson ⇒ შემდეგი გაკვეთილის დაწყება
+A path, not a leap. ⇒ ნაბიჯ-ნაბიჯ წინ.
+All 8 modules ⇒ რვავე მოდული
+IN PROGRESS ⇒ მიმდინარეობს
+of 6 lessons ⇒ / 6 გაკვეთილი
+Your ideas. ⇒ შენი იდეები.
+A place to grow. ⇒ სივრცე ზრდისთვის.
+HOME &nbsp; ABOUT &nbsp; SERVICES &nbsp; WORK &nbsp; CONTACT ⇒ მთავარი &nbsp; ჩვენ &nbsp; სერვისები &nbsp; ნამუშევრები &nbsp; კონტაქტი
+ONE COURSE. SOMETHING TO SHOW FOR IT. ⇒ ერთი კურსი. ხელშესახები შედეგი.
+Five pages. Entirely yours. ⇒ ხუთი გვერდი. მთლიანად შენი.
+Build a real studio website as you learn. Keep your code, make it your own, and take it with you. ⇒ სწავლისას ააწყვე სტუდიის ნამდვილი საიტი. კოდი შენ გრჩება — შეცვალე და თან წაიღე.
+Open your workshop ⇒ გახსენი სამუშაო სივრცე
+Your daily rhythm ⇒ შენი ყოველდღიური ტემპი
+estimated study minutes ⇒ სასწავლო წუთი მიახლოებით
+learning minutes ⇒ სასწავლო წუთი
+Good work. Every completed lesson counts. ⇒ კარგად მუშაობ. ყოველი დასრულებული გაკვეთილი ითვლება.
+A small commitment. A skill that stays. ⇒ მცირე დრო. ცოდნა, რომელიც გრჩება.
+Adjust your daily goal ⇒ შეცვალე დღიური მიზანი
+Minutes estimate completed lesson time. ⇒ წუთები დასრულებული გაკვეთილების სავარაუდო დროა.
+A little practice ⇒ ცოტა პრაქტიკა
+ goes a long way. ⇒ ცოდნას ამყარებს.
+goes a long way. ⇒ ცოდნას ამყარებს.
+concepts are ready for a refresh. A quick revisit helps them stick. ⇒ თემა გამეორებას ელოდება. მოკლე გახსენება ცოდნის გამყარებაში დაგეხმარება.
+New ideas stick with a little repetition. Your review queue grows as you learn. ⇒ გამეორება ახალ ცოდნას ამყარებს. სასწავლო მასალასთან ერთად შენი გამეორების სიაც გაიზრდება.
+Review concepts ⇒ გაიმეორე თემები
+Explore practice ⇒ ნახე სავარჯიშოები
+Your first milestone ⇒ შენი პირველი ეტაპი
+First page, made. ⇒ პირველი გვერდი მზადაა.
+Hello, web. ⇒ გამარჯობა, ვებო.
+You completed your first module. That blank page is a starting point now. ⇒ პირველი მოდული დაასრულე. ცარიელი გვერდი უკვე საწყისი წერტილია.
+Finish your first module and turn a blank page into your own little corner of the web. ⇒ დაასრულე პირველი მოდული და ცარიელი გვერდი ვების საკუთარ პატარა კუთხედ აქციე.
+/ 6 lessons complete ⇒ / 6 გაკვეთილი დასრულებულია
+“The best way to understand ⇒ „რაღაცის გასაგებად
+ a thing is to make it.” ⇒ მისი შექმნა საუკეთესო გზაა.“
+a thing is to make it.” ⇒ მისი შექმნა საუკეთესო გზაა.“
+YOUR COURSE PHILOSOPHY ⇒ ჩვენი მიდგომა სწავლასთან
+YOUR ROAD FROM CURIOUS TO CAPABLE ⇒ გზა ინტერესიდან ცოდნამდე
+One useful step at a time. ⇒ ყოველი ნაბიჯი ახალ ცოდნას გაძლევს.
+48 lessons. 8 chapters. A website you built yourself. ⇒ 48 გაკვეთილი. 8 თავი. შენით შექმნილი ვებსაიტი.
+/ 48 complete ⇒ / 48 დასრულებულია
+min · ⇒ წთ ·
+Module checkpoint ⇒ მოდულის შემაჯამებელი
+3 exercises ⇒ 3 სავარჯიშო
+· Complete the previous lesson to unlock ⇒ · გასახსნელად დაასრულე წინა გაკვეთილი
+THE THING YOU’RE BUILDING ⇒ შენი მომავალი პროექტი
+North Studio ⇒ სტუდია „ნორთი“
+A responsive, five-page creative studio website. Your code. Your ideas. ⇒ სტუდიის ხუთგვერდიანი საიტი, რომელიც ეკრანს ერგება. შენი კოდი. შენი იდეები.
+A clear, welcoming homepage ⇒ გასაგები და მიმზიდველი მთავარი გვერდი
+A story worth telling ⇒ ამბავი, რომლის მოყოლაც ღირს
+Services with useful detail ⇒ სერვისების სასარგებლო აღწერები
+A filterable project gallery ⇒ პროექტების გალერეა ფილტრებით
+An honest contact form ⇒ საკონტაქტო ფორმა ზუსტი პასუხებით
+See your project ⇒ ნახე შენი პროექტი
+Completed lessons stay available. Unlimited retries, always. ⇒ დასრულებული გაკვეთილები ხელმისაწვდომი რჩება. ცდების რაოდენობა შეუზღუდავია.
+A START THAT FEELS LIKE YOU ⇒ დაიწყე შენზე მორგებულად
+First, a little about you. ⇒ ჯერ ცოტა შენ შესახებ.
+What brings you here? ⇒ რისი სწავლა გსურს?
+Make a little room to learn. ⇒ გამოყავი ცოტა დრო სწავლისთვის.
+We’ll start from the foundations and keep things practical. ⇒ საფუძვლებიდან დავიწყებთ და ცოდნას პრაქტიკაში გამოვიყენებთ.
+There is no wrong reason to learn something useful. ⇒ სასარგებლო ცოდნის მიღებას ნებისმიერი მიზეზი უხდება.
+Choose a rhythm that fits your life. You can change it anytime. ⇒ აირჩიე შენს ცხოვრებაზე მორგებული ტემპი. მისი შეცვლა ნებისმიერ დროს შეგიძლია.
+What should we call you? ⇒ რა სახელით მოგმართოთ?
+(optional) ⇒ (არასავალდებულო)
+Your name ⇒ შენი სახელი
+Have you written code before? ⇒ ადრე კოდი დაგიწერია?
+I’m completely new ⇒ სრულიად დამწყები ვარ
+Start with what a web page is. ⇒ დავიწყოთ იმით, რა არის ვებგვერდი.
+I’ve tried a little HTML ⇒ ცოტა HTML მიცდია
+I know a few tags, but want a solid foundation. ⇒ რამდენიმე ტეგი ვიცი, მაგრამ მყარი საფუძველი მჭირდება.
+I’ve coded a little before ⇒ კოდი ადრეც დამიწერია
+I’m here to connect the pieces. ⇒ მინდა ცოდნა ერთმანეთს დავუკავშირო.
+Build my own website ⇒ საკუთარი საიტის შექმნა
+A portfolio, a small business, or an idea of my own. ⇒ პორტფოლიო, მცირე ბიზნესი ან საკუთარი იდეა.
+Explore a new direction ⇒ ახალი მიმართულების აღმოჩენა
+Build practical skills and see where they lead. ⇒ პრაქტიკული უნარების განვითარება და ახალი შესაძლებლობები.
+Understand how the web works ⇒ ვების მუშაობის გაგება
+Follow my curiosity and make something real. ⇒ ინტერესის დაკმაყოფილება და ხელშესახები შედეგის შექმნა.
+A gentle start ⇒ მსუბუქი დასაწყისი
+A steady rhythm ⇒ სტაბილური ტემპი
+A little more room ⇒ მეტი დრო სწავლისთვის
+Your goal measures estimated time from completed lessons. No countdowns or limits. ⇒ მიზანი დასრულებული გაკვეთილების სავარაუდო დროს ითვლის. უკუთვლა და შეზღუდვები არ არის.
+Close optional placement check ⇒ საწყისი ცოდნის შემოწმების დახურვა
+Already know some HTML? Try an optional placement check. ⇒ HTML უკვე იცი? სურვილისამებრ, საწყისი ცოდნა შეამოწმე.
+Which link connects neighboring pages? ⇒ რომელი ბმული აკავშირებს მეზობელ გვერდებს?
+You recognize a real link. Begin with a quick foundation refresher; later lessons build on it. ⇒ ნამდვილი ბმული ამოიცანი. საფუძვლები მოკლედ გაიმეორე — შემდეგი გაკვეთილები მათ ეყრდნობა.
+An a element with href navigates to a page. We’ll teach this from the beginning. ⇒ a ელემენტი href-ით სხვა გვერდზე გადადის. ამას საწყისი ნაბიჯებიდან ვისწავლით.
+Back ⇒ უკან
+Let’s write some code ⇒ დავწეროთ კოდი
+Continue ⇒ გაგრძელება
+A little foundation first. ⇒ ჯერ საფუძვლები გავიმყაროთ.
+Complete lesson ⇒ ჯერ დაასრულე გაკვეთილი
+before opening this lesson. Each step builds on the last. ⇒ და შემდეგ გახსენი ეს გაკვეთილი. ყოველი ნაბიჯი წინას ეყრდნობა.
+Back to course path ⇒ კურსის გზაზე დაბრუნება
+Learn this one first. ⇒ ჯერ ეს თემა ისწავლე.
+Practice revisits concepts you have already tried. ⇒ პრაქტიკა უკვე ნაცად თემებს შეგახსენებს.
+Explore the course ⇒ კურსის დათვალიერება
+A USEFUL REFRESHER ⇒ სასარგებლო გამეორება
+ANOTHER STEP, TAKEN ⇒ კიდევ ერთი ნაბიჯი გადადგმულია
+A little more confident. ⇒ კიდევ უფრო თავდაჯერებულად.
+You made it. Keep making. ⇒ შეძელი. შექმნა გააგრძელე.
+Look what you can do now. ⇒ ნახე, უკვე რა შეგიძლია.
+Practice logged ⇒ პრაქტიკა ჩაიწერა
++30 XP · first completion only ⇒ +30 XP · მხოლოდ პირველად დასრულებისას
+3 exercises completed ⇒ 3 სავარჯიშო დასრულებულია
+complete. ⇒ დასრულებულია.
+Time to put this chapter into your own website. ⇒ დროა, ეს ცოდნა საკუთარ საიტში გამოიყენო.
+Try it in your project ⇒ სცადე შენს პროექტში
+Back to practice ⇒ პრაქტიკაზე დაბრუნება
+Next lesson ⇒ შემდეგი გაკვეთილი
+View your progress ⇒ ნახე შენი პროგრესი
+MODULE ⇒ მოდული
+· LESSON ⇒ · გაკვეთილი
+OF 6 · ⇒ / 6 ·
+MIN ⇒ წთ
+Review mode ⇒ გამეორების რეჟიმი
+Completed · revisit ⇒ დასრულებულია · გაიმეორე
+Understand ⇒ გაიგე იდეა
+Put it together ⇒ ააწყვე ნაწილები
+Make it work ⇒ აამუშავე
+THE IDEA ⇒ მთავარი იდეა
+Let’s make it click. ⇒ გავიგოთ, როგორ მუშაობს.
+A small example ⇒ პატარა მაგალითი
+PREDICT THE RESULT ⇒ გამოიცანი შედეგი
+FIND THE MISSING PIECE ⇒ იპოვე გამოტოვებული ნაწილი
+A QUICK CHECK ⇒ მოკლე შემოწმება
+Check answer ⇒ პასუხის შემოწმება
+That idea is taking shape. ⇒ იდეა უკვე გასაგები ხდება.
+Check your answer, then try arranging some code. ⇒ შეამოწმე პასუხი, შემდეგ კოდის ნაწილები დაალაგე.
+Your goal ⇒ შენი მიზანი
+BEFORE THIS LESSON ⇒ ამ გაკვეთილამდე
+No experience needed. The browser and these tabs are enough. ⇒ წინასწარი გამოცდილება არ გჭირდება. ბრაუზერი და ეს ჩანართები საკმარისია.
+A quick refresher: ⇒ მოკლე გახსენება:
+Revisit the foundation ⇒ გაიმეორე საფუძველი
+IN YOUR OWN WEBSITE ⇒ შენს საკუთარ საიტში
+THINK ABOUT THE STRUCTURE ⇒ დაფიქრდი სტრუქტურაზე
+Use the arrows to move each piece. The controls work with a keyboard or touch. ⇒ ნაწილები ისრებით გადაადგილე. ღილაკები კლავიატურითაც და შეხებითაც მუშაობს.
+Move line ⇒ გადაადგილება: ხაზი
+up ⇒ ზემოთ
+down ⇒ ქვემოთ
+The structure is in place. Now write something of your own. ⇒ სტრუქტურა სწორია. ახლა საკუთარი კოდი დაწერე.
+Not quite. Think about what must be introduced before the next piece can use it. ⇒ ჯერ არა. დაფიქრდი, რა უნდა განისაზღვროს მანამდე, სანამ შემდეგი ნაწილი მას გამოიყენებს.
+Check order ⇒ თანმიმდევრობის შემოწმება
+YOUR TURN · ⇒ შენი ჯერია ·
+MODULE CHECKPOINT ⇒ მოდულის შემაჯამებელი
+WRITE, RUN, REFINE ⇒ დაწერე, გაუშვი, დახვეწე
+Find the bug. Make it work. ⇒ იპოვე შეცდომა და შეასწორე.
+Give the idea a little shape. ⇒ მიეცი იდეას ფორმა.
+Make the idea your own. ⇒ შექმენი შენი ვერსია.
+Autosaved in this browser ⇒ ავტომატურად ინახება ამ ბრაუზერში
+Opening your code workspace… ⇒ კოდის სამუშაო სივრცე იხსნება…
+Reset this exercise to its starter? Your website workshop will stay as it is. ⇒ დავაბრუნოთ სავარჯიშოს საწყისი კოდი? შენი საიტის სამუშაო ფაილები შენარჩუნდება.
+Keep my code ⇒ ჩემი კოდის შენარჩუნება
+Reset exercise ⇒ საწყის კოდზე დაბრუნება
+Show hint ⇒ მინიშნება
+Both hints open ⇒ ორივე მინიშნება გახსნილია
+Close worked solution ⇒ ამოხსნის დახურვა
+See a worked solution ⇒ ამოხსნის მაგალითის ნახვა
+Unlimited tries. Each one teaches you something. ⇒ ცდები შეუზღუდავია. ყოველი მცდელობა რაღაცას გასწავლის.
+Hint ⇒ მინიშნება
+One way to solve it ⇒ ამოხსნის ერთ-ერთი გზა
+Reading a solution doesn’t replace the task. Return to your code, make the change, and Run. ⇒ ამოხსნის წაკითხვა დავალებას ვერ ცვლის. დაუბრუნდი შენს კოდს, შეცვალე და გაუშვი.
+I’ve worked through the manual review guidance shown with the checks. ⇒ შემოწმებებთან მოცემული ხელით გასავლელი მითითებებიც შევასრულე.
+Ready for the next small step. ⇒ მზად ხარ შემდეგი ნაბიჯისთვის.
+A few things to finish. ⇒ რამდენიმე ნაწილი დასასრულებელია.
+✓ Knowledge check ⇒ ✓ ცოდნის შემოწმება
+Knowledge check ⇒ ცოდნის შემოწმება
+✓ Code order ⇒ ✓ კოდის თანმიმდევრობა
+Code order ⇒ კოდის თანმიმდევრობა
+✓ Coding task ⇒ ✓ კოდის დავალება
+Coding task ⇒ კოდის დავალება
+Practice saved. A useful idea, refreshed. ⇒ პრაქტიკა შენახულია. სასარგებლო ცოდნა გაიმეორე.
+Lesson revisited. Your XP stays accurate. ⇒ გაკვეთილი გაიმეორე. გამოცდილების ქულები სწორად ითვლება.
+Lesson complete. 30 XP earned. ⇒ გაკვეთილი დასრულებულია. მიიღე 30 XP.
+Finish practice ⇒ პრაქტიკის დასრულება
+Structural checks finished. Test the interactions in Preview as well. ⇒ სტრუქტურის შემოწმება დასრულდა. მოქმედებები გადახედვაშიც გამოცადე.
+ZIP downloaded. Extract it, keep the folders together and open index.html. ⇒ ZIP ჩამოტვირთულია. ამოარქივე, საქაღალდეები ერთად დატოვე და index.html გახსენი.
+THE THING YOU’RE MAKING ⇒ შენი შესაქმნელი საიტი
+Your ideas, in progress. ⇒ შენი იდეები მუშაობაშია.
+A five-page studio website. Built a little at a time, entirely by you. ⇒ სტუდიის ხუთგვერდიანი საიტი. ეტაპობრივად და მთლიანად შენით შექმნილი.
+Export website ⇒ საიტის ჩამოტვირთვა
+Completed reference ⇒ დასრულებული ნიმუში
+Your working project ⇒ შენი სამუშაო პროექტი
+Explore a completed example. Your own files are preserved. ⇒ დაათვალიერე დასრულებული ნიმუში. შენი ფაილები შენარჩუნებულია.
+Your files save as you type. Lessons use separate drafts, so opening a lesson never changes this project. ⇒ ფაილები წერისას ინახება. გაკვეთილის მონახაზები ცალკეა და მათი გახსნა ამ პროექტს არ ცვლის.
+Back to my website ⇒ ჩემს საიტზე დაბრუნება
+Explore reference ⇒ ნიმუშის დათვალიერება
+PROJECT FILES ⇒ პროექტის ფაილები
+Reference is read only ⇒ ნიმუში მხოლოდ წაკითხვისთვისაა
+Editor ⇒ რედაქტორი
+Preview & run ⇒ გადახედვა და გაშვება
+Milestones ⇒ ეტაპები
+READ ONLY ⇒ მხოლოდ წაკითხვა
+YOUR CODE ⇒ შენი კოდი
+Edit project file ⇒ პროექტის ფაილის რედაქტირება:
+Edit any file, then choose Preview & run. ⇒ შეცვალე ფაილი, შემდეგ აირჩიე „გადახედვა და გაშვება“.
+Preview this page ⇒ გვერდის გადახედვა
+Page ⇒ გვერდი
+Choose Run code to start the page’s interactions. ⇒ მოქმედებების ჩასართავად აირჩიე „კოდის გაშვება“.
+Loading preview… ⇒ გადახედვა იტვირთება…
+That link leaves this preview. Check its destination in your file. ⇒ ეს ბმული გადახედვის ფარგლებს სცდება. ფაილში მისი მისამართი შეამოწმე.
+A little structure. A lot of possibility. ⇒ გამართული სტრუქტურა. ბევრი შესაძლებლობა.
+Follow these milestones as you work through the course. ⇒ კურსის გავლისას ამ ეტაპებს მიჰყევი.
+Check files ⇒ ფაილების შემოწმება
+Five connected pages ⇒ ხუთი დაკავშირებული გვერდი
+Modules 1–2 · Build one clear heading, semantic sections, shared navigation and footer on each page. ⇒ მოდულები 1–2 · ყველა გვერდზე შექმენი მთავარი სათაური, სემანტიკური სექციები, საერთო ნავიგაცია და ქვედა ნაწილი.
+Begin with index.html, then adapt the shell to About, Services, Projects and Contact. ⇒ დაიწყე index.html-ით, შემდეგ სტრუქტურა სტუდიის, სერვისების, პროექტებისა და კონტაქტის გვერდებს მოარგე.
+A shared visual foundation ⇒ საერთო ვიზუალური საფუძველი
+Modules 3–4 · Set color and spacing tokens, base typography, buttons, containers and card layouts. ⇒ მოდულები 3–4 · განსაზღვრე ფერები, დაშორებები, ტექსტი, ღილაკები, კონტეინერები და ბარათების განლაგება.
+Put shared rules in css/styles.css. Use a container, Flexbox header and Grid cards. ⇒ საერთო წესები css/styles.css-ში შეინახე. გამოიყენე კონტეინერი, Flexbox სათავე და Grid ბარათები.
+Ready for different screens ⇒ სხვადასხვა ეკრანისთვის მზად
+Module 5 · Start with one column, add roomier layouts at wider widths and preserve keyboard access. ⇒ მოდული 5 · დაიწყე ერთი სვეტით, ფართო ეკრანზე გააფართოვე განლაგება და შეინარჩუნე კლავიატურის მხარდაჭერა.
+Inspect at 360px, 768px and 1440px. Check for horizontal scrolling and clipped text. ⇒ გაიარე 360px, 768px და 1440px სიგანეები. შეამოწმე ჰორიზონტალური გადაცდენა და მოჭრილი ტექსტი.
+Interaction foundations ⇒ ინტერაქტიულობის საფუძვლები
+Modules 6–7 · Add a responsive menu, category filters, saved theme and truthful validation feedback. ⇒ მოდულები 6–7 · დაამატე ადაპტირებადი მენიუ, კატეგორიის ფილტრები, შენახული რეჟიმი და ვალიდაციის ზუსტი პასუხები.
+Use js/main.js and guard queries so the script works on all five pages. ⇒ გამოიყენე js/main.js და ელემენტების არსებობა შეამოწმე, რათა სკრიპტმა ხუთივე გვერდზე იმუშაოს.
+Final details ⇒ საბოლოო დეტალები
+Module 8 · Review copy, metadata, image alternatives, keyboard focus and export instructions. ⇒ მოდული 8 · გადაამოწმე ტექსტი, მეტამონაცემები, სურათების აღწერები, ფოკუსი და ექსპორტის ინსტრუქცია.
+Open the exported index.html and visit every page before sharing the folder. ⇒ საქაღალდის გაზიარებამდე გახსენი ჩამოტვირთული index.html და ხუთივე გვერდი გაიარე.
+Need a nudge? ⇒ მინიშნება გჭირდება?
+I manually reviewed this milestone in the preview. ⇒ ეს ეტაპი გადახედვაში ხელითაც შევამოწმე.
+File checks verify structure. They do not prove that a filter, theme or form works. Use Preview & run to test those actions, then inspect keyboard access and all three screen sizes. ⇒ ფაილების შემოწმება სტრუქტურას ადასტურებს. ფილტრი, რეჟიმი და ფორმა „გადახედვა და გაშვებით“ გამოცადე, შემდეგ კლავიატურა და სამივე ეკრანის ზომა შეამოწმე.
+Your export uses plain HTML, CSS and JavaScript. No build tools required. ⇒ ჩამოტვირთული საიტი ჩვეულებრივ HTML-ს, CSS-სა და JavaScript-ს იყენებს. აგების პროგრამები არ სჭირდება.
+Reset my project ⇒ პროექტის საწყისზე დაბრუნება
+Replace your workshop with the starter files? Export a ZIP first if you want to keep this version. ⇒ სამუშაო ფაილები საწყისი ვერსიით შევცვალოთ? ამ ვერსიის შესანარჩუნებლად ჯერ ZIP ჩამოტვირთე.
+Keep my files ⇒ ჩემი ფაილების შენარჩუნება
+Starter project restored. ⇒ საწყისი პროექტი აღდგენილია.
+Reset project ⇒ პროექტის განულება
+MAKE IT SECOND NATURE ⇒ აქციე ცოდნა ჩვევად
+A little practice. A firmer foundation. ⇒ მეტი პრაქტიკა. უფრო მყარი ცოდნა.
+Revisit the ideas you’ve tried. Every attempt gives you something to work with. ⇒ დაუბრუნდი უკვე ნაცად თემებს. ყოველი მცდელობა წინსვლის შესაძლებლობაა.
+ready to review ⇒ თემა გასამეორებელია
+Some good ideas are ready for a refresh. ⇒ რამდენიმე თემა გამეორებისთვის მზადაა.
+You’re building your review collection. ⇒ შენი გამეორების კოლექცია ივსება.
+Missed checks return here right away. Successful reviews return after longer intervals: 2, 4, 8 days and onward, up to 30 days. ⇒ შეცდომიანი თემები აქ მაშინვე ბრუნდება. წარმატებული გამეორების შემდეგ შუალედი იზრდება: 2, 4, 8 დღემდე და ასე შემდეგ, მაქსიმუმ 30 დღემდე.
+Ready for review ⇒ გასამეორებელი
+All practiced ⇒ ყველა ნაცადი თემა
+recent successful checks ⇒ ბოლო წარმატებული შემოწმება
+A little breathing room. ⇒ ცოტაოდენი თავისუფალი დრო.
+Your first ideas start here. ⇒ შენი პირველი ცოდნა აქ იწყება.
+No reviews are due yet. Continue the course, or choose All practiced to revisit a concept. ⇒ ჯერ გასამეორებელი არაფერია. გააგრძელე კურსი ან აირჩიე „ყველა ნაცადი თემა“.
+Try a lesson and your practiced concepts will appear here. ⇒ სცადე გაკვეთილი და გავლილი თემები აქ გამოჩნდება.
+Review uses separate drafts and never changes your lesson code. Practice does not award extra first-completion XP. ⇒ გამეორების მონახაზები ცალკე ინახება და გაკვეთილის კოდს არ ცვლის. პრაქტიკა დამატებით პირველი დასრულების ქულებს არ გასცემს.
+Elements & attributes ⇒ ელემენტები და ატრიბუტები
+Elements describe content. Attributes provide information inside an opening tag. ⇒ ელემენტები შინაარსს აღწერს. ატრიბუტები დამატებით ინფორმაციას გამხსნელ ტეგში ათავსებს.
+Document structure ⇒ დოკუმენტის სტრუქტურა
+Keep metadata in head and visible content in body. Declare the page language. ⇒ მეტამონაცემები head-ში მოათავსე, ხილული შინაარსი — body-ში. მიუთითე გვერდის ენა.
+Headings & text ⇒ სათაურები და ტექსტი
+Use h1 for the main subject, h2 for major sections and paragraphs for related sentences. ⇒ მთავარი თემისთვის h1 გამოიყენე, სექციებისთვის — h2, დაკავშირებული წინადადებებისთვის კი — აბზაცი.
+Links & images ⇒ ბმულები და გამოსახულებები
+Use meaningful link text and purpose-specific image alternatives. Relative paths travel with your project. ⇒ გამოიყენე გასაგები ბმულის ტექსტი და მიზნობრივი alt. ფარდობითი მისამართები პროექტთან ერთად გადაიტანება.
+Semantic landmarks ⇒ სემანტიკური არეები
+header, nav, main and footer identify the purpose of regions. An article is independently meaningful. ⇒ header, nav, main და footer არეების დანიშნულებას ასახელებს. article დამოუკიდებელი შინაარსის ერთეულია.
+Labels & inputs ⇒ წარწერები და შეყვანის ველები
+Match label for with input id. Use useful types, names and native constraints. ⇒ label-ის for ველის id-ს დაუკავშირე. გამოიყენე შესაბამისი ტიპი, name და ჩაშენებული შეზღუდვები.
+Validation & instructions ⇒ ვალიდაცია და მითითებები
+Connect additional instructions with aria-describedby. minlength counts text length. ⇒ დამატებითი მითითება aria-describedby-ით დააკავშირე. minlength ტექსტის მინიმალურ სიგრძეს ადგენს.
+Metadata & viewport ⇒ მეტამონაცემები და ხილული არე
+Titles describe tabs. Descriptions summarize content. Device-width metadata enables responsive rendering. ⇒ title ჩანართს ასახელებს, description შინაარსს აჯამებს. device-width ადაპტირებად ჩვენებას უწყობს ხელს.
+Selectors & cascade ⇒ სელექტორები და კასკადი
+Selectors choose elements. A class is more specific than a type selector in ordinary author styles. ⇒ სელექტორი ელემენტს ირჩევს. ჩვეულებრივ სტილებში კლასის სელექტორი ელემენტისაზე უფრო სპეციფიკურია.
+Readable typography ⇒ წაკითხვადი ტექსტი
+A unitless line height scales with font size. A system stack needs no downloaded font. ⇒ ერთეულის გარეშე line-height შრიფტის ზომასთან ერთად იცვლება. სისტემურ შრიფტს გადმოწერა არ სჭირდება.
+The box model ⇒ ბლოკური მოდელი
+Padding is inside the border; margin is outside. border-box includes border and padding in width. ⇒ padding ჩარჩოს შიგნითაა, margin — გარეთ. border-box სიგანეში ჩარჩოსა და padding-საც ითვლის.
+Use a parent’s flex layout for one-dimensional rows or columns. Wrapping prevents overcrowding. ⇒ ერთგანზომილებიანი მწკრივის ან სვეტის შესაქმნელად მშობელზე Flexbox ჩართე. გადატანა გადატვირთულ განლაგებას აგარიდებს.
+Grid handles rows and columns. fr distributes available space among tracks. ⇒ Grid მწკრივებსა და სვეტებს მართავს. fr თავისუფალ სივრცეს მათ შორის ანაწილებს.
+Media queries ⇒ მედიამოთხოვნები
+Start with a narrow layout. Add columns when the viewport has room. ⇒ დაიწყე ვიწრო განლაგებით. სვეტები მაშინ დაამატე, როცა ეკრანზე ადგილი გაჩნდება.
+Focus & reduced motion ⇒ ფოკუსი და შემცირებული მოძრაობა
+Provide a visible focus ring. Respect motion preferences instead of making feedback depend on animation. ⇒ ფოკუსს ხილული ჩარჩო მიეცი. უკუკავშირი მხოლოდ ანიმაციაზე არ ააგო და მოძრაობის პარამეტრები გაითვალისწინე.
+Custom properties ⇒ მორგებული CSS თვისებები
+Give shared design values names. Use var() to read them across rules. ⇒ საერთო დიზაინის მნიშვნელობებს სახელები მიეცი და წესებში var()-ით გამოიყენე.
+Variables & types ⇒ ცვლადები და ტიპები
+Use const unless reassigning. Numbers, strings and booleans have different behavior. ⇒ თუ ხელახლა მინიჭება არ გჭირდება, const გამოიყენე. რიცხვებს, სტრიქონებსა და ლოგიკურ მნიშვნელობებს განსხვავებული ქცევა აქვს.
+Functions & returns ⇒ ფუნქციები და შედეგები
+Parameters are input names. A returned value can be used by the caller. ⇒ პარამეტრები შემომავალი მონაცემების სახელებია. დაბრუნებულ მნიშვნელობას გამომძახებელი იყენებს.
+Arrays, objects & loops ⇒ მასივები, ობიექტები და ციკლები
+Arrays collect values; objects have named properties; for…of visits collection values. ⇒ მასივი მნიშვნელობებს აგროვებს, ობიექტს დასახელებული თვისებები აქვს, for…of კი კოლექციას გაივლის.
+DOM selection ⇒ ელემენტების პოვნა DOM-ში
+querySelector returns the first match or null. Check it before accessing properties. ⇒ querySelector პირველ შესაბამის ელემენტს ან null-ს აბრუნებს. თვისების გამოყენებამდე არსებობა გადაამოწმე.
+Event listeners ⇒ მოვლენის დამმუშავებლები
+Pass a handler function that can run when an event occurs. Native buttons already support keyboard clicks. ⇒ მიაწოდე ფუნქცია, რომელიც მოვლენისას შესრულდება. ნამდვილ ღილაკს კლავიატურით გააქტიურება უკვე შეუძლია.
+Filtering with data attributes ⇒ ფილტრაცია data ატრიბუტებით
+Read data-category through dataset.category and toggle hidden for nonmatching items. ⇒ data-category dataset.category-ით წაიკითხე და შეუსაბამო პუნქტებისთვის hidden შეცვალე.
+Honest form feedback ⇒ ფორმის ზუსტი უკუკავშირი
+preventDefault stops navigation. checkValidity verifies constraints but does not deliver anything. ⇒ preventDefault გადასვლას აჩერებს. checkValidity წესებს ამოწმებს, მაგრამ არაფერს აგზავნის.
+Theme storage ⇒ რეჟიმის შენახვა
+localStorage holds strings for an origin. Handle unavailable storage with try/catch. ⇒ localStorage საიტის მისამართისთვის სტრიქონებს ინახავს. მიუწვდომელი საცავი try/catch-ით დაამუშავე.
+All ⇒ ყველა
+A PLACE TO LOOK THINGS UP ⇒ სწრაფი დახმარება სწავლისას
+Your field guide to the web. ⇒ შენი ვებცნობარი.
+Small explanations. Useful examples. Ready when you need a reminder. ⇒ მოკლე ახსნა. სასარგებლო მაგალითები. როცა გახსენება დაგჭირდება.
+practical references ⇒ პრაქტიკული ჩანაწერი
+Search the field guide ⇒ ცნობარში ძიება
+Try ‘flexbox’, ‘forms’ or ‘functions’… ⇒ მოძებნე „Flexbox“, „ფორმები“ ან „ფუნქციები“…
+← Back to all references ⇒ ← ცნობარზე დაბრუნება
+Opening playground… ⇒ საცდელი სივრცე იხსნება…
+This is temporary scratch code. Your saved lessons and project are separate. ⇒ ეს დროებითი საცდელი კოდია. შენახული გაკვეთილები და პროექტი ცალკეა.
+Try the example ⇒ მაგალითის გამოცდა
+No matching entries. ⇒ შესაბამისი ჩანაწერი ვერ მოიძებნა.
+Try another word or choose a different topic. ⇒ სცადე სხვა სიტყვა ან თემა შეცვალე.
+MAKE YOURSELF AT HOME ⇒ მოირგე სასწავლო სივრცე
+A learning space that fits. ⇒ სწავლა შენს ტემპში.
+Your preferences, your progress, your pace. ⇒ შენი პარამეტრები, შენი პროგრესი, შენი ტემპი.
+The everyday details ⇒ ყოველდღიური პარამეტრები
+Daily goal ⇒ დღიური მიზანი
+minutes · ⇒ წუთი ·
+Learning timezone ⇒ სწავლის დროის სარტყელი
+Streaks count completed lessons by calendar day in this timezone. Existing activity stays on its recorded day. ⇒ უწყვეტი სწავლა ამ სარტყლის კალენდარული დღეებით ითვლება. ძველი აქტივობა ჩაწერილ დღეს ინარჩუნებს.
+Color theme ⇒ ფერების რეჟიმი
+Warm light ⇒ თბილი ღია
+Quiet dark ⇒ მშვიდი მუქი
+Match my device ⇒ მოწყობილობის მიხედვით
+Text size ⇒ ტექსტის ზომა
+Standard ⇒ ჩვეულებრივი
+Comfortable ⇒ კომფორტული
+Large ⇒ დიდი
+Reduce motion ⇒ მოძრაობის შემცირება
+Your device’s motion preference is also respected. ⇒ მოწყობილობის მოძრაობის პარამეტრიც გათვალისწინებულია.
+Your progress, at a glance ⇒ შენი პროგრესი ერთი შეხედვით
+lessons completed ⇒ დასრულებული გაკვეთილი
+XP earned ⇒ მიღებული XP
+Level ⇒ დონე
+· 180 XP per level. Each first lesson completion earns 30 XP. Repeating a lesson keeps your skills fresh. ⇒ · თითო დონეს 180 XP სჭირდება. გაკვეთილის პირველად დასრულება 30 XP-ს გაძლევს. გამეორება ცოდნის შენარჩუნებაში გეხმარება.
+Chapter achievements ⇒ მოდულების მიღწევები
+Earned ⇒ მიღებულია
+Complete all six lessons to earn ⇒ მისაღებად ექვსივე გაკვეთილი დაასრულე
+Keep a copy of your work ⇒ შეინახე შენი ნამუშევრის ასლი
+Your code and progress live in this browser. Download a backup to move devices or protect your work before clearing browser data. ⇒ კოდი და პროგრესი ამ ბრაუზერში ინახება. სხვა მოწყობილობაზე გადასატანად ან ბრაუზერის გასუფთავებამდე ასლი ჩამოტვირთე.
+Export progress ⇒ პროგრესის ჩამოტვირთვა
+Import backup ⇒ ასლის შემოტანა
+Please use a backup under 3 MB. ⇒ გამოიყენე 3 მბ-ზე ნაკლები ზომის ასლი.
+This backup contains ⇒ ეს ასლი შეიცავს
+completed lessons and ⇒ დასრულებულ გაკვეთილს და
+project files. Import replaces the current browser progress. Export your current progress first if needed. ⇒ პროექტის ფაილს. შემოტანა ბრაუზერის მიმდინარე პროგრესს ჩაანაცვლებს. საჭიროების შემთხვევაში ჯერ ახლანდელი ასლი ჩამოტვირთე.
+Cancel ⇒ გაუქმება
+Backup imported. Your learning space is ready. ⇒ ასლი შემოტანილია. სასწავლო სივრცე მზადაა.
+Import this backup ⇒ ამ ასლის შემოტანა
+A fresh start ⇒ ახალი დასაწყისი
+Reset removes this browser’s course progress, exercise drafts and website files. Export a copy first if you want to keep them. ⇒ განულება ამ ბრაუზერიდან კურსის პროგრესს, სავარჯიშოების მონახაზებსა და საიტის ფაილებს შლის. შესანარჩუნებლად ჯერ ასლი ჩამოტვირთე.
+Reset learning space ⇒ სასწავლო სივრცის განულება
+Type RESET to confirm ⇒ დასადასტურებლად ჩაწერე RESET
+Keep my work ⇒ ჩემი ნამუშევრის შენარჩუნება
+Your learning space has been reset. ⇒ სასწავლო სივრცე განულებულია.
+Reset everything ⇒ ყველაფრის განულება
+Check the learning environment ⇒ სასწავლო გარემოს შემოწმება
+FIRSTLIGHT · A PRACTICAL BEGINNING ⇒ FIRSTLIGHT · დაიწყე პრაქტიკით
+The web is something ⇒ ვებსაიტის შექმნა
+ you can make. ⇒ შენც შეგიძლია.
+you can make. ⇒ შენც შეგიძლია.
+You don’t need to know where to start. That’s what we’re here for. Learn HTML, CSS and JavaScript by making small things that add up to a real website. ⇒ არ არის აუცილებელი იცოდე, საიდან დაიწყო. ამაში ჩვენ დაგეხმარებით. ისწავლე HTML, CSS და JavaScript პატარა ნაბიჯებით, რომლებიც ნამდვილ საიტად გაერთიანდება.
+Start learning ⇒ სწავლის დაწყება
+Explore the curriculum ⇒ სასწავლო პროგრამის ნახვა
+Understand a small idea ⇒ გაიგე ერთი პატარა იდეა
+Plain-language explanations, with examples you can change. ⇒ მარტივად დაწერილი ახსნა და მაგალითები, რომელთა შეცვლაც შეგიძლია.
+Try it for yourself ⇒ სცადე შენით
+Write code, run it in an isolated preview, and get useful feedback. ⇒ დაწერე კოდი, გაუშვი იზოლირებულ გარემოში და მიიღე სასარგებლო უკუკავშირი.
+Build something of your own ⇒ შექმენი რაღაც საკუთარი
+Bring your skills together in a five-page studio website. ⇒ გააერთიანე ცოდნა სტუდიის ხუთგვერდიან საიტში.
+TRY SOMETHING RIGHT NOW ⇒ სცადე ახლავე
+Your first line is closer than you think. ⇒ პირველი ხაზი იმაზე ახლოსაა, ვიდრე გგონია.
+Change this heading. Choose Run code. You’ve just changed a real web page. ⇒ შეცვალე ეს სათაური და აირჩიე „კოდის გაშვება“. შენ ნამდვილი ვებგვერდი შეცვალე.
+Opening your first experiment… ⇒ შენი პირველი ცდის სივრცე იხსნება…
+substantive lessons ⇒ სრულფასოვანი გაკვეთილი
+core exercises ⇒ ძირითადი სავარჯიშო
+pages you’ll build ⇒ გვერდი შენს საიტში
+Yours ⇒ შენია
+ every line of code ⇒ კოდის ყოველი ხაზი
+every line of code ⇒ კოდის ყოველი ხაზი
+Free guest learning. No AI API key, payment gate, lives or timers. Cloud accounts are optional and require setup. ⇒ სტუმრის რეჟიმში სწავლა უფასოა. არ გჭირდება AI გასაღები, გადახდა ან ცდების ლიმიტი. ღრუბლოვანი ანგარიში არასავალდებულოა და გამართვას საჭიროებს.
+The cloud request could not be completed. ⇒ ღრუბლოვან სერვისთან მოთხოვნა ვერ შესრულდა.
+Account connected for this session. Merge progress deliberately before saving. ⇒ ანგარიში ამ სესიისთვის დაკავშირებულია. შენახვამდე პროგრესის გაერთიანება გადაამოწმე.
+Check your email to confirm your account, then sign in. ⇒ ანგარიშის დასადასტურებლად ელფოსტა შეამოწმე, შემდეგ შემოდი.
+No cloud progress yet. You can save your browser progress. ⇒ ღრუბელში პროგრესი ჯერ არ არის. შეგიძლია ბრაუზერის პროგრესი შეინახო.
+Browser progress saved to your private cloud account. ⇒ ბრაუზერის პროგრესი შენს პირად ღრუბლოვან ანგარიშში შეინახა.
+Read cloud progress again before retrying. ⇒ ხელახლა ცდამდე ღრუბლის პროგრესი თავიდან წაიკითხე.
+Optional cloud accounts ⇒ ღრუბლოვანი ანგარიში სურვილისამებრ
+Guest mode is ready now. Cloud sync is not configured for this site. To connect your own Supabase project, apply the included migration, enable email/password authentication and enter its public settings below. ⇒ სტუმრის რეჟიმი მზადაა. ღრუბლოვანი სინქრონიზაცია ჯერ გამართული არ არის. Supabase-ის დასაკავშირებლად გამოიყენე თანდართული მიგრაცია, ჩართე ელფოსტითა და პაროლით შესვლა და ქვემოთ საჯარო პარამეტრები მიუთითე.
+Connect a configured project ⇒ გამართული პროექტის დაკავშირება
+Supabase project URL ⇒ Supabase პროექტის მისამართი
+Public publishable or anon key ⇒ საჯარო publishable ან anon გასაღები
+Public client key only — never a service-role key ⇒ მხოლოდ საჯარო გასაღები — არასოდეს service-role
+Email ⇒ ელფოსტა
+Password ⇒ პაროლი
+Sign in ⇒ შესვლა
+Create account ⇒ ანგარიშის შექმნა
+Connected as ⇒ დაკავშირებული ანგარიში:
+. Your session stays in memory. ⇒ . სესია მხოლოდ მეხსიერებაში რჩება.
+Read cloud progress ⇒ ღრუბლის პროგრესის წაკითხვა
+Save to cloud ⇒ ღრუბელში შენახვა
+Sign out ⇒ გასვლა
+Cloud has ⇒ ღრუბელში შენახულია
+completed lessons. Merge combines completions and review history; your browser’s project files and preferences take priority for conflicting files. Export a backup before merging if needed. ⇒ დასრულებული გაკვეთილი. გაერთიანება აერთიანებს დასრულებებსა და გამეორებებს; ფაილის კონფლიქტისას ბრაუზერის ვერსია და პარამეტრები დარჩება. საჭიროების შემთხვევაში ჯერ ასლი ჩამოტვირთე.
+Cloud data inspected. Browser files will be used when saving. ⇒ ღრუბლის მონაცემები წაკითხულია. შენახვისას ბრაუზერის ფაილები გამოიყენება.
+Keep browser version ⇒ ბრაუზერის ვერსიის შენარჩუნება
+Progress merged in this browser. Save to cloud to upload it. ⇒ პროგრესი ამ ბრაუზერში გაერთიანდა. ასატვირთად ღრუბელში შეინახე.
+Merge progress ⇒ პროგრესის გაერთიანება
+Working with your cloud account… ⇒ მიმდინარეობს ღრუბლოვან ანგარიშთან მუშაობა…
+No credentials are stored in project previews or progress exports. Setup files are included with the source. ⇒ შესვლის მონაცემები პროექტის გადახედვასა და პროგრესის ასლში არ ინახება. გამართვის ფაილები საწყის კოდს ახლავს.
+Responsive validation ⇒ ეკრანის ზომების შემოწმება
+Code workspace ⇒ კოდის სამუშაო სივრცე
+Code ⇒ კოდი
+Preview ⇒ გადახედვა
+Instructions ⇒ ინსტრუქცია
+Make it yours ⇒ შექმენი შენი ვერსია
+Stop ⇒ შეჩერება
+Checking… ⇒ მოწმდება…
+Run code ⇒ კოდის გაშვება
+Editor width ⇒ რედაქტორის სიგანე
+HTML & CSS preview automatically · JavaScript runs on demand ⇒ HTML და CSS ავტომატურად ახლდება · JavaScript — გაშვებისას
+Your brief ⇒ შენი დავალება
+What to check ⇒ რა უნდა შეამოწმო
+Manual review: ⇒ ხელით შესამოწმებელი:
+HTML and CSS refresh after you type. Choose Run code to execute JavaScript and check your result. Your work saves as you edit. ⇒ HTML და CSS წერისას ახლდება. JavaScript-ის შესასრულებლად და შედეგის შესამოწმებლად აირჩიე „კოდის გაშვება“. სამუშაო რედაქტირებისას ინახება.
+Edit ⇒ რედაქტირება:
+ code ⇒ კოდი
+Your browser preview ⇒ შენი გვერდის გადახედვა
+Fit preview ⇒ ხელმისაწვდომ სიგანეზე მორგება
+360 pixel preview ⇒ 360 პიქსელის სიგანის გადახედვა
+Your isolated website preview ⇒ შენი საიტის იზოლირებული გადახედვა
+Console ⇒ კონსოლი
+Ready for your first run ⇒ მზადაა პირველი გაშვებისთვის
+ messages ⇒ შეტყობინება
+console.log output and runtime errors appear here. Preview storage is temporary. ⇒ აქ console.log-ის შედეგები და შესრულების შეცდომები გამოჩნდება. გადახედვის საცავი დროებითია.
+Automated checks ⇒ ავტომატური შემოწმება
+Not there yet. Compare your result with the brief, then try again. ⇒ ჯერ არ შესრულებულა. შეადარე შედეგი დავალებას და კიდევ სცადე.
+Reference · read only ⇒ ნიმუში · მხოლოდ წაკითხვისთვის
+Tab indents · Esc then Tab leaves editor ⇒ Tab — შეწევა · Esc და შემდეგ Tab — რედაქტორიდან გასვლა
+Tab moves focus · click Indent to restore editing tabs ⇒ Tab ფოკუსს გადააქვს · შეწევის აღსადგენად შესაბამის ღილაკს დააჭირე
+Indent ⇒ შეწევა
+LEARNING ENVIRONMENT CHECKS ⇒ სასწავლო გარემოს შემოწმება
+Test the reference solutions. ⇒ შეამოწმე ამოხსნის ნიმუშები.
+Run all 48 worked solutions through the same isolated evaluators used by the lessons, including responsive viewport checks. ⇒ გაუშვი 48-ვე ამოხსნა გაკვეთილების იმავე იზოლირებულ შემმოწმებელში, ეკრანის ზომების ტესტების ჩათვლით.
+Run all curriculum checks ⇒ ყველა გაკვეთილის შემოწმება
+Stop after this lesson ⇒ ამ გაკვეთილის შემდეგ შეჩერება
+/ 48 checked · ⇒ / 48 შემოწმებულია ·
+lessons with failed checks ⇒ გაკვეთილში შემოწმება ვერ გაიარა
+Curriculum test runner ⇒ გაკვეთილების სატესტო გარემო
+The backup is too large (maximum 3 MB). ⇒ ასლი მეტისმეტად დიდია. მაქსიმალური ზომაა 3 მბ.
+This is not a supported Firstlight progress backup. ⇒ ეს Firstlight-ის მხარდაჭერილი პროგრესის ასლი არ არის.
+Some profile preferences are invalid. ⇒ პროფილის ზოგი პარამეტრი არასწორია.
+The backup timezone is invalid. ⇒ ასლში დროის სარტყელი არასწორია.
+The saved learning data is incomplete. ⇒ შენახული სასწავლო მონაცემები არასრულია.
+The project contains an unsupported file. ⇒ პროექტი მიუღებელ ფაილს შეიცავს.
+An exercise draft is invalid. ⇒ სავარჯიშოს მონახაზი არასწორია.
+Daily activity is invalid. ⇒ ყოველდღიური აქტივობის მონაცემები არასწორია.
+Exercise attempts are invalid. ⇒ სავარჯიშოს მცდელობების მონაცემები არასწორია.
+The review schedule is invalid. ⇒ გამეორების განრიგი არასწორია.
+Unknown milestone. ⇒ უცნობი ეტაპია მითითებული.
