@@ -4,7 +4,7 @@ import { pick, praise, retry, streakLine } from '../lib/academy/voice.ts';
 import { SCORES, motionAllowed, playSound, setSoundEnabled, soundEnabled, haptic } from '../lib/academy/fx.ts';
 
 test('pick is deterministic, always in range and survives odd seeds', () => {
-  for (const list of [praise, retry]) {
+  for (const list of [praise, retry] as readonly (readonly string[])[]) {
     assert.ok(list.length >= 3, 'enough variety that feedback does not repeat every time');
     for (const seed of [0, 1, 7, 99, -3, -100, 2.9, Number.NaN, Infinity, 1e15]) {
       const a = pick(list, seed);
@@ -17,7 +17,7 @@ test('pick is deterministic, always in range and survives odd seeds', () => {
 });
 
 test('every encouragement line is real, trimmed text with no duplicates', () => {
-  for (const list of [praise, retry]) {
+  for (const list of [praise, retry] as readonly (readonly string[])[]) {
     for (const line of list) assert.ok(line.trim() === line && line.length > 3);
     assert.equal(new Set(list).size, list.length);
   }
