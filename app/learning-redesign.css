@@ -1,0 +1,229 @@
+/* Firstlight — ქართული სასწავლო გამოცდილების ვიზუალური ფენა.
+   ინარჩუნებს არსებულ კომპონენტებს და ამატებს უფრო მკაფიო იერარქიას,
+   რბილ მიკრო-ინტერაქციებსა და მობილურზე უკეთეს გამოცდილებას. */
+
+:root {
+  --redesign-ink: #17151d;
+  --redesign-muted: #706b7a;
+  --redesign-violet: #7357ff;
+  --redesign-violet-dark: #5740d6;
+  --redesign-cyan: #2ec5ce;
+  --redesign-yellow: #ffd166;
+  --redesign-surface: rgba(255, 255, 255, .78);
+  --redesign-border: rgba(35, 28, 65, .1);
+  --redesign-shadow: 0 18px 55px rgba(51, 35, 104, .12);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background:
+    radial-gradient(circle at 8% 0%, rgba(115, 87, 255, .1), transparent 28rem),
+    radial-gradient(circle at 100% 15%, rgba(46, 197, 206, .08), transparent 24rem),
+    var(--page-bg, #fbfafc);
+}
+
+.app-shell { isolation: isolate; }
+
+.app-main { position: relative; }
+.app-main::before {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  inset: 0 0 auto;
+  height: 5px;
+  background: linear-gradient(90deg, var(--redesign-violet), var(--redesign-cyan), var(--redesign-yellow));
+  opacity: .9;
+}
+
+.sidebar {
+  border-right-color: var(--redesign-border) !important;
+  box-shadow: 8px 0 32px rgba(44, 29, 93, .035);
+}
+
+.brand { transition: transform .2s ease, opacity .2s ease; }
+.brand:hover { transform: translateX(3px); opacity: .86; }
+.brand-mark span { transition: transform .2s ease; }
+.brand:hover .brand-mark span:nth-child(1) { transform: translateY(-2px) rotate(-5deg); }
+.brand:hover .brand-mark span:nth-child(3) { transform: translateY(2px) rotate(5deg); }
+
+.sidebar nav a,
+.sidebar-bottom > a:not(.profile),
+.topbar-reference,
+.path-lesson,
+.path-module-heading,
+.practice-studio-link,
+button,
+a { transition: color .18s ease, background-color .18s ease, border-color .18s ease, transform .18s ease, box-shadow .18s ease; }
+
+.sidebar nav a { border-radius: 13px; margin: 3px 10px; padding: 11px 12px; }
+.sidebar nav a:hover { transform: translateX(3px); background: rgba(115, 87, 255, .08); }
+.sidebar nav a.active {
+  background: linear-gradient(100deg, rgba(115, 87, 255, .15), rgba(46, 197, 206, .08));
+  box-shadow: inset 3px 0 0 var(--redesign-violet);
+}
+
+.topbar {
+  backdrop-filter: blur(16px);
+  background: color-mix(in srgb, var(--page-bg, #fbfafc) 82%, transparent) !important;
+  border-bottom-color: var(--redesign-border) !important;
+}
+
+.top-stat {
+  border: 1px solid var(--redesign-border);
+  border-radius: 999px;
+  padding: 7px 11px;
+  background: var(--redesign-surface);
+}
+
+.main-content { animation: redesign-enter .45s ease both; }
+
+.page-heading h1,
+.page-heading h2 { letter-spacing: -.035em; text-wrap: balance; }
+
+.page-heading { position: relative; }
+.page-heading::after {
+  content: "✦";
+  position: absolute;
+  right: 4%;
+  top: -12px;
+  color: var(--redesign-yellow);
+  font-size: 2rem;
+  transform: rotate(14deg);
+  filter: drop-shadow(0 5px 10px rgba(255, 209, 102, .35));
+}
+
+.practice-studio-link {
+  border: 1px solid rgba(115, 87, 255, .17) !important;
+  background: linear-gradient(110deg, rgba(115, 87, 255, .12), rgba(46, 197, 206, .1)) !important;
+  box-shadow: var(--redesign-shadow);
+}
+.practice-studio-link:hover { transform: translateY(-4px); box-shadow: 0 22px 60px rgba(51, 35, 104, .18); }
+
+.path-layout { align-items: start; }
+.course-path,
+.path-aside,
+.mini-project,
+.path-module,
+.path-module-heading,
+.path-lesson {
+  border-color: var(--redesign-border) !important;
+}
+
+.path-module {
+  overflow: hidden;
+  border-radius: 20px !important;
+  background: var(--redesign-surface);
+  box-shadow: 0 7px 25px rgba(44, 29, 93, .045);
+}
+.path-module + .path-module { margin-top: 14px; }
+.path-module-heading { min-height: 82px; }
+.path-module-heading:hover { background: rgba(115, 87, 255, .055); }
+
+.module-icon {
+  border-radius: 15px !important;
+  box-shadow: 0 8px 18px rgba(115, 87, 255, .13);
+}
+
+.path-lessons { padding: 7px 12px 14px; }
+.path-lesson { border-radius: 14px !important; margin-top: 5px; }
+.path-lesson:not(:disabled):hover {
+  transform: translateX(4px);
+  border-color: rgba(115, 87, 255, .35) !important;
+  box-shadow: 0 6px 20px rgba(115, 87, 255, .08);
+}
+.path-lesson.done { background: rgba(46, 197, 206, .07); }
+.path-lesson.available .path-node { box-shadow: 0 0 0 5px rgba(115, 87, 255, .08); }
+
+.progress-track { height: 9px !important; border-radius: 999px; overflow: hidden; }
+.progress-track span {
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--redesign-violet), var(--redesign-cyan)) !important;
+  box-shadow: 0 0 13px rgba(115, 87, 255, .45);
+}
+
+.card,
+.lesson-card,
+.stat-card,
+.dashboard-card,
+.skill-card,
+.reference-card,
+.theory-card {
+  border-color: var(--redesign-border) !important;
+  box-shadow: 0 8px 30px rgba(44, 29, 93, .055);
+}
+
+.card:hover,
+.lesson-card:hover,
+.stat-card:hover,
+.dashboard-card:hover,
+.skill-card:hover,
+.reference-card:hover,
+.theory-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--redesign-shadow);
+}
+
+button:not(:disabled):focus-visible,
+a:focus-visible,
+textarea:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(46, 197, 206, .65) !important;
+  outline-offset: 3px;
+}
+
+.btn-primary,
+.primary-button,
+button[type="submit"] {
+  box-shadow: 0 8px 18px rgba(115, 87, 255, .2);
+}
+.btn-primary:hover,
+.primary-button:hover,
+button[type="submit"]:hover { transform: translateY(-2px); box-shadow: 0 12px 25px rgba(115, 87, 255, .3); }
+
+.example-code,
+pre {
+  border: 1px solid rgba(115, 87, 255, .16) !important;
+  box-shadow: inset 0 1px rgba(255, 255, 255, .06), 0 12px 30px rgba(15, 12, 30, .12);
+}
+
+.toast { border: 1px solid rgba(46, 197, 206, .25); box-shadow: 0 15px 40px rgba(44, 29, 93, .18); }
+
+@keyframes redesign-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+  .topbar { padding-inline: 14px !important; }
+  .topbar-right .top-stat span:last-child { display: none; }
+  .top-stat { padding: 6px 9px; }
+  .page-heading::after { right: 1%; opacity: .6; }
+  .path-layout { grid-template-columns: minmax(0, 1fr) !important; }
+  .path-aside { position: static !important; }
+}
+
+@media (max-width: 640px) {
+  .topbar-location { max-width: 58vw; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .topbar-reference { display: none !important; }
+  .page-heading h1 { font-size: clamp(1.8rem, 8vw, 2.5rem) !important; }
+  .path-module-heading { padding: 12px !important; }
+  .path-lesson { padding: 11px 10px !important; }
+  .page-heading::after { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+[data-motion="reduce"] *,
+[data-motion="reduce"] *::before,
+[data-motion="reduce"] *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+
+[data-theme="dark"] {
+  --redesign-surface: rgba(34, 31, 46, .78);
+  --redesign-border: rgba(255, 255, 255, .1);
+  --redesign-shadow: 0 18px 55px rgba(0, 0, 0, .28);
+}
