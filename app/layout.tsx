@@ -4,5 +4,14 @@ import './learning.css';
 import './purple.css';
 import './academy-tools.css';
 import './fx.css';
-export const metadata:Metadata={title:'Firstlight — ისწავლე ვებსაიტების შექმნა',description:'პატარა ნაბიჯები. ნამდვილი საიტები. ისწავლე HTML, CSS და JavaScript 66 გაკვეთილითა და 108 ტერმინის ცნობარით და ააწყვე შენი ხუთგვერდიანი ვებსაიტი.',icons:{icon:'/favicon.svg'}};
-export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="ka"><body>{children}</body></html>;}
+import './learning-redesign.css';
+
+export const metadata: Metadata = {
+  title: 'Firstlight — ისწავლე პროგრამირება ქართულად',
+  description: 'ინტერაქტიული ქართულენოვანი სასწავლო სივრცე HTML-ის, CSS-ისა და JavaScript-ის შესასწავლად.',
+  icons: { icon: '/favicon.svg' },
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return <html lang="ka"><body>{children}</body></html>;
+}
